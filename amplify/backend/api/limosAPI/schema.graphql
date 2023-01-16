@@ -1,0 +1,50 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+
+type Profesional @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  nombre: String
+  apellido: String
+}
+
+type Dietas @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  clienteID: ID! @index(name: "byCliente")
+  cliente: String
+  fechaEntrega: AWSDate
+  fechaConsulta: AWSDate
+  tiempoRealizacion: String
+  calorias: Int
+}
+
+type Consultas @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  cliente: String
+  seguimiento: String
+  fecha: AWSDateTime
+  lugar: String
+  aceptada: Boolean
+  clienteID: ID! @index(name: "byCliente")
+}
+
+type Plan @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  nombre: String
+  precio: Float
+}
+
+type Cliente @model @auth(rules: [{allow: public}, {allow: private, provider: iam}]) {
+  id: ID!
+  nombre: String
+  lugar: String
+  ultimaConsulta: AWSDate
+  profesional: String
+  Plan: Plan @hasOne
+  email: AWSEmail
+  phoneNumber: AWSPhone
+  NutriAsignado: Profesional @hasOne
+  Dietas: [Dietas] @hasMany(indexName: "byCliente", fields: ["id"])
+  Consultas: [Consultas] @hasMany(indexName: "byCliente", fields: ["id"])
+  peso: Float
+}
