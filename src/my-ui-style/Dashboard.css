@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Manrope:400,700,500,600,800");
+
+@font-face {
+    font-family: "Gilroy-Black";
+    font-style: normal;
+    font-weight: 900;
+    src: url("https://fonts.animaappp.com/Gilroy-Black")
+    format("opentype");
+}
+
+.screen a {
+    display: contents;
+    text-decoration: none;
+}
+
+.container-center-horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    pointer-events: none;
+    width: 100%;
+}
+
+.container-center-horizontal > * {
+    flex-shrink: 0;
+    pointer-events: auto;
+}
+
+.dashboard {
+    align-items: flex-start;
+    background-color: var(--white);
+    border: 1px none;
+    display: flex;
+    gap: 46px;
+    width: 1440px;
+}

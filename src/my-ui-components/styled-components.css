@@ -1,0 +1,176 @@
+:root {
+  --black: rgba(0, 0, 0, 1);
+  --science-blue: rgba(0, 109, 211, 1);
+  --mine-shaft: rgba(48, 48, 48, 1);
+  --dodger-blue-2: rgba(54, 158, 255, 0.102);
+  --dodger-blue: rgba(54, 158, 255, 1);
+  --sushi: rgba(138, 197, 62, 1);
+  --pewter-blue: rgba(142, 163, 182, 1);
+  --silver: rgba(189, 189, 189, 1);
+  --gallery: rgba(240, 240, 240, 1);
+  --black-haze: rgba(247, 247, 247, 1);
+  --neon-carrot: rgba(255, 152, 58, 0.2);
+  --sunglow: rgba(255, 208, 66, 0.2);
+  --white: rgba(255, 255, 255, 1);
+
+  --font-size-m: 12px;
+  --font-size-l: 14px;
+  --font-size-xl: 16px;
+  --font-size-xxl: 18px;
+  --font-size-xxxl: 20px;
+  --font-size-xxxxl: 30px;
+  --font-size-xxxxxl: 40px;
+
+  --font-family-gilroy-black: "Gilroy-Black";
+  --font-family-manrope: "Manrope";
+}
+
+/* Classes */
+
+.manrope-medium-dodger-blue-18px { 
+  color: var(--dodger-blue);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-xxl);
+  font-weight: 500;
+  font-style: normal;
+}
+.manrope-semi-bold-dodger-blue-14px {
+  color: var(--dodger-blue);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-l);
+  font-weight: 600;
+  font-style: normal;
+}
+.manrope-semi-bold-mine-shaft-12px {
+  color: var(--mine-shaft);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-m);
+  font-weight: 600;
+  font-style: normal;
+}
+.manrope-semi-bold-white-8px {
+  color: var(--white);
+  font-family: var(--font-family-manrope);
+  font-size: 8px;
+  font-weight: 600;
+  font-style: normal;
+}
+.manrope-medium-mine-shaft-14px {
+  color: var(--mine-shaft);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-l);
+  font-weight: 500;
+  font-style: normal;
+}
+.manrope-medium-gallery-12px {
+  color: var(--gallery);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-m);
+  font-weight: 500;
+  font-style: normal;
+}
+.manrope-semi-bold-mine-shaft-14px {
+  color: var(--mine-shaft);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-l);
+  font-weight: 600;
+  font-style: normal;
+}
+.manrope-bold-mine-shaft-14px {
+  color: var(--mine-shaft);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-l);
+  font-weight: 700;
+  font-style: normal;
+}
+.manrope-bold-mine-shaft-30px {
+  color: var(--mine-shaft);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-xxxxl);
+  font-weight: 700;
+  font-style: normal;
+}
+.manrope-normal-silver-12px {
+  color: var(--silver);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  font-style: normal;
+}
+.gilroy-black-science-blue-30px {
+  color: var(--science-blue);
+  font-family: var(--font-family-gilroy-black);
+  font-size: var(--font-size-xxxxl);
+  font-weight: 900;
+  font-style: normal;
+}
+.manrope-semi-bold-white-14px {
+  color: var(--white);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-l);
+  font-weight: 600;
+  font-style: normal;
+}
+.manrope-bold-mine-shaft-24px {
+  color: var(--mine-shaft);
+  font-family: var(--font-family-manrope);
+  font-size: 24px;
+  font-weight: 700;
+  font-style: normal;
+}
+.manrope-bold-white-20px {
+  color: var(--white);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-xxxl);
+  font-weight: 700;
+  font-style: normal;
+}
+.manrope-medium-dodger-blue-14px {
+  color: var(--dodger-blue);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-l);
+  font-weight: 500;
+  font-style: normal;
+}
+.manrope-medium-silver-14px {
+  color: var(--silver);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-l);
+  font-weight: 500;
+  font-style: normal;
+}
+.manrope-medium-dodger-blue-12px {
+  color: var(--dodger-blue);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-m);
+  font-weight: 500;
+  font-style: normal;
+}
+.manrope-bold-science-blue-40px {
+  color: var(--science-blue);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-xxxxxl);
+  font-weight: 700;
+  font-style: normal;
+}
+.manrope-semi-bold-dodger-blue-18px {
+  color: var(--dodger-blue);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-xxl);
+  font-weight: 600;
+  font-style: normal;
+}
+.manrope-normal-dodger-blue-18px {
+  color: var(--dodger-blue);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-xxl);
+  font-weight: 400;
+  font-style: normal;
+}
+.manrope-medium-pewter-blue-16px {
+  color: var(--pewter-blue);
+  font-family: var(--font-family-manrope);
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  font-style: normal;
+}

@@ -1,51 +1,33 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import { useEffect, useState } from 'react';
-import { API, graphqlOperation } from 'aws-amplify';
-import {createProfesional} from './graphql/mutations';
-import {listProfesionals} from './graphql/queries';
-import {withAuthenticator, Button, Heading} from '@aws-amplify/ui-react';
-import styles from '@aws-amplify/ui-react/styles.css';
 
-function App({signOut, user}) {
+import Grid from '@mui/material/Grid';
+import MyGrid from './my-ui-components/MyGrid.js';
+// import ResponsiveAppBar from './my-ui-components/ResponsiveAppBar.jsx';
+import Leftbar from './ui-components/Leftbar.jsx';
+// import { Dashboard } from '@material-ui/icons';
+import Dashboard from './my-ui-components/Dashboard.jsx'
 
-  const [profesional, setProfesional] = useState({
-    nombre: '',
-    apellido: '',
-  });
 
-  const [profesionals, setProfesionals] = useState([]);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log(profesional);
-    const result = await API.graphql(graphqlOperation(createProfesional, { input: profesional }));
-    console.log(result);
-  };
-
-useEffect(() => {
-  async function loadProfesionals() {
-    const result = await API.graphql(graphqlOperation(listProfesionals));
-    setProfesionals(result.data.listProfesionals.items);
-    console.log(result);
-  }
-  loadProfesionals()
-}, [])
-
+export default function App() {
   return (
-    <>
-      <Heading level={1}>Hello {user.username}</Heading>
-      <form onSubmit={handleSubmit}>
-        <input name="nombre" placeholder='nombre' onChange={(e) => setProfesional({ ...profesional, nombre: e.target.value})}/>
-        <textarea name="apellido" placeholder='apellido' onChange={(e) => setProfesional({ ...profesional, apellido: e.target.value})}/>
-        <button>Submit</button>
-      </form>
-      {JSON.stringify(profesionals)}
-
-      <Button onClick={signOut} style={styles.button}>Sign out</Button>
-
-    </>
+    <Dashboard></Dashboard>
+    // <container>
+    //   <ResponsiveAppBar></ResponsiveAppBar>
+    //   <Grid container spacing={1}>
+    //     <Grid item xs={12}>
+    //     </Grid>
+    //     <Grid item xs={4}>
+    //       <Leftbar></Leftbar>
+    //     </Grid>
+    //     <Grid item xs={4}>
+    //       <div>xs=4</div>
+    //     </Grid>
+    //     <Grid item xs={4}>
+    //       <div>xs=4</div>
+    //     </Grid>
+    //   </Grid>
+    // </container>
+    
   );
 }
-
-export default withAuthenticator(App);
