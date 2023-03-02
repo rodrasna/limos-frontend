@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import React from "react";
 
+
 export const ValignTextMiddle = css`
   display: flex;
   flex-direction: column;
@@ -183,9 +184,9 @@ class App extends React.Component {
 
 export default App;
 // import {
-//   // ManropeSemiBoldDodgerBlue18px,
-//   // ManropeMediumSilver14px,
-//   // ManropeMediumMineShaft14px,
+//   ManropeSemiBoldDodgerBlue18px,
+//   ManropeMediumSilver14px,
+//   ManropeMediumMineShaft14px,
 //   GilroyBlackScienceBlue30px,
 //   ManropeMediumDodgerBlue14px,
 //   ManropeBoldMineShaft30px,
@@ -2221,7 +2222,7 @@ const dashboardData = {
  fill1152: "fill-1152-1.png",
  spanText1: "SE",
  spanText2: "T",
- iconlyLightOutlineHome: "./assets/iconly-light-outline-home-1.png",
+ iconlyLightOutlineHome: "../assets/iconly-light-outline-home-1.png",
  iconlyLightOutlineCategory: "iconly-light-outline-category-1.png",
  iconlyLightOutlineFolder: "iconly-light-outline-folder-1.png",
  iconlyLightOutlineChat: "iconly-light-outline-chat-1.png",
