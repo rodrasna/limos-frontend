@@ -1,18 +1,13 @@
 import * as React from "react";
-import "../App.css";
-import rectangle291 from "../assets/rectangle291.svg";
-import iconlyLightOutlineS from "../assets/iconlyLightOutlineS.svg";
-import group4 from "../assets/group4.svg";
-import iconlyLightOutlineF from "../assets/iconlyLightOutlineF.svg";
-import group2 from "../assets/group2.svg";
-import iconlyLightOutlineH from "../assets/iconlyLightOutlineH.svg";
-import group from "../assets/group.svg";
-import fill1152 from "../assets/fill1152.svg";
-import iconlyLightOutlineC from "../assets/iconlyLightOutlineC.svg";
-import ellipse1 from "../assets/ellipse1.svg";
-import group1 from "../assets/group1.svg";
-import iconlyLightOutlineC1 from "../assets/iconlyLightOutlineC1.svg";
-import catAbsoluteContainer from "../assets/catAbsoluteContainer.png";
+import "../../App.css";
+import rectangle291 from "../../assets/rectangle291.svg";
+import iconlyLightOutlineS from "../../assets/iconlyLightOutlineS.svg";
+import iconlyLightOutlineF from "../../assets/iconlyLightOutlineF.svg";
+import iconlyLightOutlineH from "../../assets/iconlyLightOutlineH.svg";
+import fill1152 from "../../assets/fill1152.svg";
+import iconlyLightOutlineC from "../../assets/iconlyLightOutlineC.svg";
+import ellipse1 from "../../assets/ellipse1.svg";
+import iconlyLightOutlineC1 from "../../assets/iconlyLightOutlineC1.svg";
 
 import { Component } from 'react';
 

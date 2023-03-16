@@ -1,17 +1,10 @@
 import * as React from "react";
-import "../App.css";
-import moreVertical7 from "../assets/moreVertical7.svg";
-import rectangle26 from "../assets/rectangle26.svg";
-import rectangle24 from "../assets/rectangle24.svg";
-import group16 from "../assets/group16.svg";
-import group14 from "../assets/group16.svg";
-import moreVertical1 from "../assets/moreVertical1.svg";
-import moreVertical4 from "../assets/moreVertical4.svg";
-import moreVertical6 from "../assets/moreVertical6.svg";
-import moreVertical5 from "../assets/moreVertical5.svg";
-import moreVertical3 from "../assets/moreVertical3.svg";
-import moreVertical8 from "../assets/moreVertical8.svg";
-import moreVertical2 from "../assets/moreVertical2.svg";
+import "../../App.css";
+import rectangle26 from "../../assets/rectangle26.svg";
+import rectangle24 from "../../assets/rectangle24.svg";
+import group16 from "../../assets/group16.svg";
+import group14 from "../../assets/group16.svg";
+import moreVertical6 from "../../assets/moreVertical6.svg";
 
 import Grid from '@mui/material/Grid';
 

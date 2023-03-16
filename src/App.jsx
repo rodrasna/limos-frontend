@@ -1,9 +1,9 @@
 import * as React from "react";
 import "./App.css";
 import Grid from '@mui/material/Grid';
-import LeftBar from "./my-ui-components/LeftBar.jsx";
-import Center from "./my-ui-components/Center";
-import Right from "./my-ui-components/Right";
+import Center from "./my-ui-components/center-components/Center";
+import Right from "./my-ui-components/right-components/Right";
+import Left from "./my-ui-components/left-components/Left";
 
 import rectangle2 from "./assets/rectangle2.svg";
 
@@ -12,7 +12,7 @@ const App = () => {
   return (
     <div className="dashboard">
       <Grid item xs={4}>
-        <LeftBar></LeftBar>
+        <Left></Left>
       </Grid>
       <Grid item xs={4}>
         <>
