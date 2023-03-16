@@ -15,19 +15,6 @@
   display: flex;
 }
 
-.rectangle-1 {
-  color: #bdbdbd;
-  background-color: #fff;
-  border-radius: 40px 0 0 40px;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  padding-right: 60px;
-  font-size: .875rem;
-  display: flex;
-  line-height: 19px;
-}
-
 .flex-container {
   color: #006ed3;
   width: 70%;
@@ -102,7 +89,7 @@
 }
 
 .flex-container-2 {
-  width:50%;
+  width: 50%;
   flex-direction: row;
   align-items: center;
   padding: 5px;
@@ -244,7 +231,7 @@
   border-radius: 10px;
 }
 
-.rectangle-2 {
+.column-basegrid-rectangle {
   color: #bdbdbd;
   background-color: #fff;
   border-radius: 40px 0 0 40px;
@@ -277,7 +264,7 @@
   padding-right: 700px;
 }
 
-.flex-container-9 {
+.title-container {
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
@@ -306,69 +293,53 @@
   padding-left: 20px;
 }
 
-.group-1-1 {
-  color: #f0f0f0;
-  width: 100%;
-  flex-direction: row;
-  flex-basis: 16%;
-  justify-content: space-between;
-  align-items: stretch;
-  margin-bottom: 2px;
-  line-height: 27px;
-  display: flex;
-}
-
 .intersect-1 {
-  width: 136px;
-  height: 80px;
-  object-fit: cover;
+  margin-left: auto;
+  display: -webkit-box;
   align-self: flex-end;
-  margin-left: 164px;
-  margin-right: -400px;
 }
 
 .intersect {
-  width: 81px;
-  height: 41px;
-  object-fit: cover;
-  margin-left: 90px;
-  margin-right: -81px;
+  margin-left: auto;
+  margin-top: auto;
+  position: absolute;
+  display: -webkit-box;
+  align-self: flex-start;
 }
 
-.rectangle-5 {
-  height: 100%;
+.rectangle-consulta {
+  height: 150px;
+  width: 100px;
+  gap: 0px;
+  min-width: 300px;
   background-color: #369fff;
+  box-shadow: 0px 10px 30px #369fff66;
   border-radius: 20px;
-  flex-direction: row;
-  flex-basis: 100%;
-  justify-content: space-around;
-  align-items: center;
-  margin-left: -5px;
-  padding-top: 1px;
-  padding-bottom: 2px;
+  align-items: flex-start;
   display: flex;
 }
 
-.flex-container-10 {
-  height: 75%;
+.dieta-container {
+  width: 87px;
   flex-direction: column;
-  flex-basis: 22%;
   justify-content: space-between;
-  align-items: stretch;
-  margin-top: 3px;
+  align-items: flex-end;
+  position: absolute;
+  margin-top: 12px;
   display: flex;
 }
 
-.french {
+.dieta-title {
   color: #fff;
   align-self: flex-end;
   font-size: 1.25rem;
   font-weight: 700;
 }
 
-.num-35-lessons {
+.dieta-tipo {
   margin-bottom: 6px;
-  line-height: 16px;
+  color: #dfdfdf;
+  align-self: flex-end;
 }
 
 .group-9 {
@@ -490,19 +461,19 @@
   font-weight: 500;
 } */
 
-.rectangle-10 {
-  width: 100%;
+.consulta-rectangle {
   background-color: #f7f7f7;
-  border-radius: 16px;
+  border-radius: 20px;
   flex-direction: row;
   flex-basis: 9%;
   justify-content: space-around;
   align-items: center;
   font-weight: 600;
   display: flex;
+  padding: 10px;
 }
 
-.rectangle-24 {
+.consulta-image-client-rectangle {
   width: 50px;
   height: 50px;
   object-fit: cover;
@@ -519,7 +490,7 @@
   display: flex;
 }
 
-.num-800-am-1000-am {
+.time {
   color: #bdbdbd;
   font-weight: 400;
 }
@@ -997,11 +968,10 @@
   color: #bdbdbd;
 }
 
-.more-vertical-6 {
+.consulta-option {
   width: 4px;
   height: 18px;
   object-fit: cover;
-  margin-left: 16px;
 }
 
 .rectangle-14 {
@@ -1061,33 +1031,37 @@
   align-items: center;
   padding-right: 50px;
   padding-left: 0px;
+  padding-top: 10px;
   font-size: .875rem;
   line-height: 19px;
   display: flex;
 }
 
-.flex-container-27 {
+.profile-container {
   width: 100%;
   flex-direction: row;
   flex-basis: 6%;
-  justify-content: space-between;
-  align-self: flex-end;
+  justify-content: flex-start;
   align-items: center;
-  margin-left: 2px;
   font-weight: 600;
-  line-height: 16px;
+  line-height: 25px;
   display: flex;
+  letter-spacing: 1px;
+  font-size: 1.125rem;
+  line-height: 25px;
+  margin-bottom: 14px;
 }
 
 .claritynotification {
   width: 25px;
   height: 26px;
+  padding-right: 10px;
   object-fit: cover;
 }
 
 .rectangle-3 {
   height: 100%;
-  background-color: #369fff;
+  background-color: #97c7f5;
   border-radius: 16px;
   flex-direction: row;
   flex-basis: 63%;
@@ -1107,19 +1081,21 @@
 }
 
 .flex-container-28 {
-  height: 55%;
+  height: 50%;
+  width: 50%;
   flex-direction: column;
   justify-content: space-between;
-  align-items: stretch;
-  margin-top: 1px;
+  align-items: center;
+  margin-top: 10px;
   display: flex;
 }
 
-.bruno-fernandes {
+.profile-name {
   line-height: 19px;
+  color: #303030;
 }
 
-.basic-plan {
+.profile-plan {
   color: #369fff;
   font-size: .75rem;
   font-weight: 500;
@@ -1133,9 +1109,10 @@
 }
 
 .statistics {
-  margin-left: 1px;
   font-size: 1.5rem;
   font-weight: 700;
+  margin-right: 99px;
+  margin-bottom: 3px;
   line-height: 33px;
 }
 
@@ -1153,7 +1130,7 @@
 }
 
 .rectangle-5-5 {
-  color: #8ea3b7;
+  color: #ffffff;
   height: 100%;
   background-color: #369fff;
   border-radius: 20px;
@@ -1165,21 +1142,28 @@
   display: flex;
 }
 
-.courses-completed {
-  margin-bottom: 3px;
+.statistic-box-title {
+  padding: 10px;
   font-size: 1rem;
   font-weight: 500;
   line-height: 22px;
 }
 
-.flex-container-30 {
+.statistic-box-container {
   color: #006ed3;
-  width: 70%;
-  flex-direction: row;
-  flex-basis: 17%;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: end;
+  justify-content: space-between;
+  display: flex;
+}
+
+.flex-container-34 {
+  color: #8ea3b7;
+  flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
-  margin-top: 1px;
+  font-weight: 500;
   display: flex;
 }
 
@@ -1190,7 +1174,7 @@
   border-radius: 20px;
 }
 
-.num-02 {
+.statistic-box-num {
   align-self: flex-end;
 }
 

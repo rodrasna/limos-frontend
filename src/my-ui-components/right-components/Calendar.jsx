@@ -8,20 +8,19 @@ class Statistics extends Component {
     render() {
         return (
             <><div className="flex-container-35">
-            <span className="activity">Activity</span>
-            <span className="day">Day</span>
-            <span className="week">Week</span>
-            <span className="month">Month</span>
+            <span className="day">Día</span>
+            <span className="week">Semana</span>
+            <span className="month">Mes</span>
           </div>
           <img className="group-30" src={group30} />
           <div className="flex-container-36">
-            <span>Mon</span>
-            <span>Tues</span>
-            <span>Wed</span>
-            <span>Thurs</span>
-            <span className="fri">Fri</span>
-            <span className="sat">Sat</span>
-            <span className="sun">Sun</span>
+            <span>Lun</span>
+            <span>Mar</span>
+            <span>Mier</span>
+            <span>Jue</span>
+            <span className="fri">Vier</span>
+            <span className="sat">Sab</span>
+            <span className="sun">Dom</span>
           </div></>
         );
     }

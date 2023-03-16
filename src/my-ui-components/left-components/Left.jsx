@@ -14,7 +14,7 @@ import { Component } from 'react';
 class LeftBar extends Component {
     render() {
         return (
-            <div className="rectangle-1">
+            <div className="column-basegrid-rectangle">
                 <div className="flex-container">
                     <img className="fill-1152" src={fill1152} />
                     <span className="se">LIMOS</span>
@@ -53,9 +53,9 @@ class LeftBar extends Component {
                 </div>
                 
                 <div className="rectangle-30">
-                    <span className="upgrade-your-plan">Upgrade your plan</span>
+                    <span className="upgrade-your-plan">Mejora tu plan</span>
                     <div className="flex-container-7">
-                        <span className="go-to-pro">Go to PRO</span>
+                        <span className="go-to-pro">Ir a PRO</span>
                         <img className="rectangle-29" src={rectangle291} />
                     </div>
                 </div>

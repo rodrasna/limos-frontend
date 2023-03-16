@@ -1,24 +1,22 @@
 import "../../App.css";
-import intersect1 from "../../assets/intersect1.svg";
-import group9 from "../../assets/group9.svg";
-import intersect from "../../assets/intersect.svg";
-
+import rectangle24 from "../../assets/client.png";
+import moreVertical6 from "../../assets/moreVertical6.svg";
 
 import { Component } from 'react';
+import { IconButton } from "@mui/material";
 
 class Consulta extends Component {
     render() {
         return (
-            <div className="group-1-1" >
-                <img className="intersect-1" src={intersect1} />
-                <img className="intersect" src={intersect} />
-                <div className="rectangle-5" >
-                    <div className="flex-container-10" >
-                        <span className="french" > Rodri 1 </span>
-                        <span className="num-35-lessons" > 35 lessons </span>
-                        < img className="group-9" src={group9} />
-                    </div>
+            <div className="consulta-rectangle">
+                <img className="consulta-image-client-rectangle" src={rectangle24} />
+                <div className="flex-container-13">
+                    <span className="grammar-intermedia">Lucía Martín Fontes</span>
+                    <span className="time">8:00 - 10:00 AM</span>
                 </div>
+                <IconButton>
+                    <img className="consulta-option" src={moreVertical6} />
+                </IconButton>
             </div>
         );
     }

@@ -6,6 +6,9 @@ import Right from "./my-ui-components/right-components/Right";
 import Left from "./my-ui-components/left-components/Left";
 
 import rectangle2 from "./assets/rectangle2.svg";
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+
 
 
 const App = () => {

@@ -4,40 +4,47 @@ import rectangle29 from "../../assets/rectangle29.svg";
 
 import { Component } from 'react';
 
+import Grid from '@mui/material/Grid';
+
 class Statistics extends Component {
     render() {
         return (
-            <><span className="statistics">Statistics</span><div className="flex-container-29">
-                <div className="rectangle-5-5">
-                    <span className="courses-completed">Courses Completed</span>
-                    <div className="flex-container-30">
-                        <img className="rectangle-29-1" src={rectangle29} />
-                        <span className="num-02">02</span>
-                    </div>
-                </div>
-                <div className="rectangle-6">
-                    <span className="total-points-gained">Total Points Gained</span>
-                    <div className="flex-container-31">
-                        <img className="rectangle-30-1" src={rectangle29} />
-                        <span className="num-250">250</span>
-                    </div>
-                </div>
-            </div><div className="flex-container-32">
-                    <div className="rectangle-7">
-                        <span className="courses-in-progress">Courses In Progress</span>
-                        <div className="flex-container-33">
-                            <img className="rectangle-32" src={rectangle29} />
-                            <span className="num-03">03</span>
+            <>
+                <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+                    <Grid item xs={6}>
+                        <div className="rectangle-5-5">
+                            <span className="statistic-box-title">Consultas hechas</span>
+                            <div className="statistic-box-container">
+                                <span className="statistic-box-num">02</span>
+                            </div>
                         </div>
-                    </div>
-                    <div className="rectangle-8">
-                        <div className="flex-container-34">
-                            <span>Tasks Finished</span>
-                            <img className="rectangle-31" src={rectangle29} />
+                    </Grid>
+                    <Grid item xs={6}>
+                        <div className="rectangle-5-5">
+                            <span className="statistic-box-title">Horas en consulta</span>
+                            <div className="statistic-box-container">
+                                <span className="statistic-box-num">250</span>
+                            </div>
                         </div>
-                        <span className="num-05">05</span>
-                    </div>
-                </div></>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <div className="rectangle-5-5">
+                            <span className="statistic-box-title">Consulta actual</span>
+                            <div className="statistic-box-container">
+                                <span className="statistic-box-num">03</span>
+                            </div>
+                        </div>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <div className="rectangle-5-5">
+                            <span className="statistic-box-title">Tareas acabadas</span>
+                            <div className="statistic-box-container">
+                                <span className="statistic-box-num">05</span>
+                            </div>
+                        </div>
+                    </Grid>
+                </Grid>
+            </>
         );
     }
 }
