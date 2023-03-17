@@ -6,18 +6,27 @@ import rectangle4 from "../../assets/juanito.jpg";
 
 import { Component } from 'react';
 
+import { Icon, IconButton } from "@mui/material";
+
 class Statistics extends Component {
     render() {
         return (
             <><div className="profile-container">
-                <img className="claritynotification" src={claritynotification} />
-                <div className="rectangle-3">
-                    <img className="rectangle-4" src={rectangle4} />
-                    <div className="flex-container-28">
+                <div className="profile-rectangle">
+                    <img className="profile-image" src={rectangle4} />
+                    <div className="vl" />
+                    <IconButton>
+                        <img className="claritynotification" src={claritynotification} />
+                    </IconButton>
+                    <div className="vl" />
+                    <div className="profile-data-container">
                         <span className="profile-name">Juan</span>
                         <span className="profile-plan">Administrador</span>
                     </div>
-                    <img className="chevron-down-1" src={chevronDown1} />
+                    <IconButton>
+                        <img className="profile-rectangle-options" src={chevronDown1} />
+                    </IconButton>
+
                 </div>
             </div></>
         );

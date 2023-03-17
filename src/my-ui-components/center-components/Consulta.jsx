@@ -10,7 +10,7 @@ class Consulta extends Component {
         return (
             <div className="consulta-rectangle">
                 <img className="consulta-image-client-rectangle" src={rectangle24} />
-                <div className="flex-container-13">
+                <div className="consulta-data-client-container">
                     <span className="grammar-intermedia">Lucía Martín Fontes</span>
                     <span className="time">8:00 - 10:00 AM</span>
                 </div>

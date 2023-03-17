@@ -6,34 +6,30 @@ import Right from "./my-ui-components/right-components/Right";
 import Left from "./my-ui-components/left-components/Left";
 
 import rectangle2 from "./assets/rectangle2.svg";
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-
 
 
 const App = () => {
   return (
     <div className="dashboard">
-      <Grid item xs={4}>
-        <Left></Left>
+      <Grid container rowSpacing={0} columnSpacing={{ xs: 1, sm: 1, md: 1 }}>
+        <Grid item xs={1.5}>
+          <Left></Left>
+        </Grid>
+        <div className="vertical-home-grid-divider">
+          <img src={rectangle2}></img>
+        </div>
+        <Grid item xs={6}>
+          <Center></Center>
+        </Grid>
+
+        <div className="vertical-home-grid-divider">
+          <img src={rectangle2}></img>
+        </div>
+        <Grid item xs={3}>
+          <Right></Right>
+        </Grid>
       </Grid>
-      <Grid item xs={4}>
-        <>
-          <img src={rectangle2}></img><div className="flex-container-8"></div>
-        </>
-      </Grid>
-      <Grid item xs={4}>
-        <Center></Center>
-      </Grid>
-      <Grid item xs={4}>
-        <>
-          <img src={rectangle2}></img><div className="flex-container-8"></div>
-        </>
-      </Grid>
-      <Grid item xs={4}>
-        <Right></Right>
-      </Grid>
-    </div>
+    </div >
   );
 };
 export default App;

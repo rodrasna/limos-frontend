@@ -1,10 +1,5 @@
 import * as React from "react";
 import "../../App.css";
-import rectangle26 from "../../assets/rectangle26.svg";
-import rectangle24 from "../../assets/rectangle24.svg";
-import group16 from "../../assets/group16.svg";
-import group14 from "../../assets/group16.svg";
-import moreVertical6 from "../../assets/moreVertical6.svg";
 
 import Grid from '@mui/material/Grid';
 import Consulta from "./Consulta";
