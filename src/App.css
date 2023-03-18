@@ -266,9 +266,17 @@
   padding: 30px;
   display: flex;
 }
-svg {
-  color : "red";
+
+a {
+  color: #c5c3c3;
+  text-decoration: none;
 }
+
+a.active {
+  color: #369fff;
+  text-decoration: none;
+}
+
 .hello-welcome {
   letter-spacing: 1px;
   color: #369fff;
