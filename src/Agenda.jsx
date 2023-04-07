@@ -4,6 +4,8 @@ import Grid from '@mui/material/Grid';
 import Center from "./my-ui-components/center-components/Center";
 import Right from "./my-ui-components/right-components/Right";
 import Left from "./my-ui-components/left-components/Left";
+import RightAgenda from "./my-ui-components/right-components/RightAgenda";
+import CenterAgenda from "./my-ui-components/center-components/CenterAgenda";
 
 import rectangle2 from "./assets/rectangle2.svg";
 
@@ -19,14 +21,14 @@ const Agenda = () => {
           <img src={rectangle2}></img>
         </div>
         <Grid item xs={6}>
-          Agenda
+          <CenterAgenda></CenterAgenda>
         </Grid>
 
         <div className="vertical-home-grid-divider">
           <img src={rectangle2}></img>
         </div>
         <Grid item xs={3}>
-          <Right></Right>
+          <RightAgenda></RightAgenda>
         </Grid>
       </Grid>
     </div >

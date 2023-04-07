@@ -30,7 +30,6 @@ root.render(
         <Route path="library" element={<Library />} />
         <Route path="pay" element={<Pay />} />
         <Route path="statistic" element={<Statistic />} />
-        
     </Routes>
   </BrowserRouter>
 );

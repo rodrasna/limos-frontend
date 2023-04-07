@@ -191,6 +191,18 @@
   margin-right: 5px;
 }
 
+.accept-button {
+  size: 100px;
+  height: auto;
+  width: auto;
+  background-color: #dadada;
+}
+.reject-button {
+  height: auto;
+  width: auto;
+  background-color: #dadada;
+}
+
 .rectangle-30 {
   width: 80%;
   color: #369fff;
