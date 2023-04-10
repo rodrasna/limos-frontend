@@ -5,6 +5,7 @@ import { Component } from 'react';
 import ProximasDietas from "./ProximasDietas";
 import ConsultasPendientes from "./ConsultasPendientes";
 import PeticionesConsulta from "./PeticionesConsulta";
+import MyCalendar from "./MyCalendar";
 
 class CenterAgenda extends Component {
     render() {
@@ -17,9 +18,10 @@ class CenterAgenda extends Component {
                 </div>
                 <PeticionesConsulta></PeticionesConsulta>
                 <div className="title-container">
-                    <span className="my-courses">Google Calndar</span>
+                    <span className="my-courses">Google Calendar</span>
                     {/* <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Europe%2FMadrid&showTz=0&showCalendars=0&showTabs=0&showPrint=0&showDate=0&showNav=0&showTitle=0" style="border-width:0" width="800" height="600" frameborder="0"></iframe> */}
                     <span className="view-all">Ver todo</span>
+                    <MyCalendar></MyCalendar>
                 </div>
             </div>
         );
