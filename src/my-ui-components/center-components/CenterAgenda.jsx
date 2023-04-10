@@ -5,7 +5,7 @@ import { Component } from 'react';
 import ProximasDietas from "./ProximasDietas";
 import ConsultasPendientes from "./ConsultasPendientes";
 import PeticionesConsulta from "./PeticionesConsulta";
-import MyCalendar from "./MyCalendar";
+import MyCalendar from "./Calendar";
 
 class CenterAgenda extends Component {
     render() {
