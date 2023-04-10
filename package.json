@@ -5,6 +5,7 @@
   "dependencies": {
     "@aws-sdk/config-resolver": "^3.306.0",
     "@aws-sdk/smithy-client": "^3.309.0",
+    "@babel/core": "^7.21.4",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@material-ui/icons": "^4.11.3",
