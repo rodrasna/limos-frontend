@@ -25,11 +25,12 @@ const App = () => {
         <div className="vertical-home-grid-divider">
           <img src={rectangle2}></img>
         </div>
-        <Grid item xs={3}>
+        <Grid item xs={12} md={3}>
           <Right></Right>
         </Grid>
       </Grid>
-    </div >
+    </div>
   );
 };
+
 export default App;

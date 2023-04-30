@@ -1,24 +1,22 @@
-import "../../App.css";
+import "../../style/Consulta.css";
 import rectangle24 from "../../assets/client.png";
 import moreVertical6 from "../../assets/moreVertical6.svg";
-
-import { Component } from 'react';
 import { IconButton } from "@mui/material";
 
-class Consulta extends Component {
-    render() {
-        return (
-            <div className="consulta-rectangle">
-                <img className="consulta-image-client-rectangle" src={rectangle24} />
-                <div className="consulta-data-client-container">
-                    <span className="grammar-intermedia">Lucía Martín Fontes</span>
-                    <span className="time">8:00 - 10:00 AM</span>
-                </div>
-                <IconButton>
-                    <img className="consulta-option" src={moreVertical6} />
-                </IconButton>
+const Consulta = (props) => {
+    const { cliente, hora } = props;
+    return (
+        <div className="consulta-rectangle">
+            <img className="consulta-image-client-rectangle" src={rectangle24} alt="client" />
+            <div className="consulta-data-client-container">
+                <span className="grammar-intermedia">{cliente}</span>
+                <span className="time">{hora}</span>
             </div>
-        );
-    }
-}
+            <IconButton>
+                <img className="consulta-option" src={moreVertical6} alt="options" />
+            </IconButton>
+        </div>
+    );
+};
+
 export default Consulta;

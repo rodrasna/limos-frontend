@@ -1,0 +1,34 @@
+.statistics {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-right: 99px;
+    margin-bottom: 3px;
+    line-height: 33px;
+}
+
+.uppershadow-statistic-rectangle {
+    align-self: flex-start;
+    position: absolute;
+    display: -webkit-box;
+}
+
+.lowershadow-statistic-rectangle {
+    margin-left: auto;
+    object-fit: cover;
+    align-self: flex-end;
+    position: absolute;
+}
+
+.statistic-rectangle {
+    color: #ffffff;
+    background-color: #369fff;
+    border-radius: 20px;
+    flex-basis: 46%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 0px 1px 30px #369fff66;
+    align-items: flex-start;
+    display: flex;
+    gap: 0px;
+}

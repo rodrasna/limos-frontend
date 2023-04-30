@@ -19,9 +19,8 @@ const Statistic = () => {
           <img src={rectangle2}></img>
         </div>
         <Grid item xs={6}>
-        Statistic
+          Statistic
         </Grid>
-
         <div className="vertical-home-grid-divider">
           <img src={rectangle2}></img>
         </div>

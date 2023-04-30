@@ -1,9 +1,10 @@
 import * as React from "react";
 import "../../App.css";
+import "../../style/Center.css"
 
 import { Component } from 'react';
-import ProximasDietas from "./ProximasDietas";
-import ConsultasPendientes from "./ConsultasPendientes";
+import DietasPendientes from "./DietasPendientes";
+import ProximasConsultas from "./ProximasConsultas";
 
 class Center extends Component {
     render() {
@@ -11,15 +12,15 @@ class Center extends Component {
             <div className="center-column-basegrid-rectangle">
                 <span className="hello-welcome">🍔Hola Juan!🍔</span>
                 <div className="title-container">
-                    <span className="planning">Dietas Pendientes</span>
+                    <span className="section-title">Dietas Pendientes</span>
                     <span className="view-all">Ver todo</span>
                 </div>
-                <ProximasDietas></ProximasDietas>
+                <DietasPendientes></DietasPendientes>
                 <div className="title-container">
-                    <span className="my-courses">Proximas Consultas</span>
+                    <span className="section-title">Proximas Consultas</span>
                     <span className="view-all">Ver todo</span>
                 </div>
-                <ConsultasPendientes></ConsultasPendientes>
+                <ProximasConsultas></ProximasConsultas>
             </div>
         );
     }
