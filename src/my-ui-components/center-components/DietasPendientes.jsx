@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid';
 import Dieta from "./Dieta";
   
 
-const DietasPendientes = () => {
+function DietasPendientes() {
 
   const dietas = [
     { title: "Dieta deportiva", tipo: "Deportiva" },
@@ -13,7 +13,7 @@ const DietasPendientes = () => {
     { title: "Dieta para aumentar masa muscular", tipo: "Masa muscular" },
     { title: "Dieta cetogénica", tipo: "Cetogénica" },
   ];
-  
+
   return (
     <Grid container rowSpacing={2} columnSpacing={{ xs: 3, sm: 2, md: 3 }} sx={{ maxWidth: 800, margin: 'auto' }}>
       {dietas.map((dieta, index) => (
@@ -23,6 +23,6 @@ const DietasPendientes = () => {
       ))}
     </Grid>
   );
-};
+}
 
 export default DietasPendientes;

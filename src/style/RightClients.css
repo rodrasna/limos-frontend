@@ -1,0 +1,20 @@
+.right-column-basegrid-rectangle {
+    color: #bdbdbd;
+    background-color: #fff;
+    border-radius: 40px 0 0 40px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: .875rem;
+    display: flex;
+    margin: 0 auto;
+}
+
+.filters-container {
+    max-width: 1000px; /* Establece la anchura máxima que desees */
+    margin: 0 auto; /* Centra horizontalmente */
+  }
+  
+  .Accordion-root {
+    width: 100%; /* Ancho al 100% para que se adapte automáticamente */
+  }

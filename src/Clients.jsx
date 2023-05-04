@@ -1,9 +1,9 @@
 import * as React from "react";
 import "./App.css";
 import Grid from '@mui/material/Grid';
-import Center from "./my-ui-components/center-components/Center";
-import Right from "./my-ui-components/right-components/Right";
 import Left from "./my-ui-components/left-components/Left";
+import RightClients from "./my-ui-components/right-components/RightClients";
+import CenterClients from "./my-ui-components/center-components/CenterClients";
 
 import rectangle2 from "./assets/rectangle2.svg";
 
@@ -19,14 +19,14 @@ const Clients = () => {
           <img src={rectangle2}></img>
         </div>
         <Grid item xs={6}>
-          Clients
+          <CenterClients></CenterClients>
         </Grid>
 
         <div className="vertical-home-grid-divider">
           <img src={rectangle2}></img>
         </div>
         <Grid item xs={3}>
-          <Right></Right>
+          <RightClients></RightClients>
         </Grid>
       </Grid>
     </div >
