@@ -37,7 +37,7 @@ class Left extends Component {
                     </NavLink>
                     <NavLink to="/users" className="left-sidebar-link">
                         <img className="iconly-light-outline-f" src={iconlyLightOutlineF} />
-                        <span className="resources">Usuarios</span>
+                        <span className="resources">Equipo</span>
                     </NavLink>
                     <NavLink to="/clients" className="left-sidebar-link">
                         <img className="iconly-light-outline-c" src={iconlyLightOutlineC} />
