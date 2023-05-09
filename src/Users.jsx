@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import Center from "./my-ui-components/center-components/Center";
 import Right from "./my-ui-components/right-components/Right";
 import Left from "./my-ui-components/left-components/Left";
+import CenterTeam from "./my-ui-components/center-components/CenterTeam";
 
 import rectangle2 from "./assets/rectangle2.svg";
 
@@ -19,7 +20,7 @@ const Users = () => {
           <img src={rectangle2}></img>
         </div>
         <Grid item xs={6}>
-          Users
+          <CenterTeam></CenterTeam>
         </Grid>
 
         <div className="vertical-home-grid-divider">

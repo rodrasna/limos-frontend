@@ -932,15 +932,6 @@ a.active {
   margin-left: 20px;
 }
 
-.dieta-rectangle {
-  gap: 0px;
-  background-color: #369fff;
-  box-shadow: 0px 10px 30px #369fff66;
-  border-radius: 10px;
-  align-items: center;
-  display: flex;
-}
-
 
 
 .statistic-box-title {

@@ -19,7 +19,7 @@ const Library = () => {
           <img src={rectangle2}></img>
         </div>
         <Grid item xs={6}>
-          Users
+          Library
         </Grid>
 
         <div className="vertical-home-grid-divider">
