@@ -25,6 +25,7 @@ class RightClients extends Component {
             selectedPlans: [],
         };
     }
+    
 
     componentDidMount() {
         window.addEventListener("resize", this.handleResize);
@@ -43,7 +44,6 @@ class RightClients extends Component {
         const selectedValue = event.target.value;
         const selectedOrderBy = this.state.selectedOrderBy;
         const selectedIndex = selectedOrderBy.indexOf(selectedValue);
-        console.log("TODOS:" + selectedOrderBy);
 
         if (selectedIndex === -1) {
             // add the value to the selected users array
@@ -52,7 +52,8 @@ class RightClients extends Component {
             // remove the value from the selected users array
             selectedOrderBy.splice(selectedIndex, 1);
         }
-
+        this.props.onFilterChange(selectedOrderBy);
+        console.log(selectedOrderBy);
         this.setState({ selectedOrderBy });
     };
 
@@ -60,7 +61,6 @@ class RightClients extends Component {
         const selectedValue = event.target.value;
         const selectedPlace = this.state.selectedPlace;
         const selectedIndex = selectedPlace.indexOf(selectedValue);
-        console.log("TODOS:" + selectedPlace);
 
         if (selectedIndex === -1) {
             // add the value to the selected users array
@@ -69,7 +69,8 @@ class RightClients extends Component {
             // remove the value from the selected users array
             selectedPlace.splice(selectedIndex, 1);
         }
-
+        this.props.onFilterChange(selectedPlace);
+        console.log(selectedPlace);
         this.setState({ selectedPlace });
     };
 
@@ -85,7 +86,8 @@ class RightClients extends Component {
             // remove the value from the selected options array
             selectedProfesionals.splice(selectedIndex, 1);
         }
-
+        this.props.onFilterChange(selectedProfesionals);
+        console.log(selectedProfesionals);
         this.setState({ selectedProfesionals });
     };
     handlePlans = (event) => {
@@ -100,9 +102,12 @@ class RightClients extends Component {
             // remove the value from the selected options array
             selectedPlans.splice(selectedIndex, 1);
         }
-
+        this.props.onFilterChange(selectedPlans);
+        console.log(selectedPlans);
         this.setState({ selectedPlans });
     };
+
+
 
     render() {
         const isSmallScreen = this.state.width < 768;
@@ -115,8 +120,8 @@ class RightClients extends Component {
                 <div className={rightColumnBasegridRectangleClassNames}>
                     <Profile></Profile>
                     <div className="title-container">
-                            <span className="section-title">Filtros</span>
-                        </div>
+                        <span className="section-title">Filtros</span>
+                    </div>
                     <div className="filters-container">
                         <Accordion className="MuiAccordion-root">
                             <AccordionSummary>
@@ -195,30 +200,31 @@ class RightClients extends Component {
                                 </div>
                             </AccordionDetails>
                         </Accordion>
-                    
-                    <Accordion>
-                        <AccordionSummary>
-                            <Typography>Plan</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <div className="checkbox-list">
-                                {["LNP Deporte y Salud", "LNP Competidor", "LNP Élite"].map((plans) => (
-                                    <FormControlLabel
-                                        key={plans}
-                                        control={
-                                            <Checkbox
-                                                className="checkbox-list-item"
-                                                checked={this.state.selectedPlans.includes(plans)}
-                                                onChange={this.handlePlans}
-                                                value={plans}
-                                            />
-                                        }
-                                        label={plans === "" ? "Otros" : `${plans}`}
-                                    />
-                                ))}
-                            </div>
-                        </AccordionDetails>
-                    </Accordion>
+
+                        <Accordion>
+                            <AccordionSummary>
+                                <Typography>Plan</Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <div className="checkbox-list">
+                                    {["LNP Deporte y Salud", "LNP Competidor", "LNP Élite"].map((plans) => (
+                                        <FormControlLabel
+                                            key={plans}
+                                            control={
+                                                <Checkbox
+                                                    className="checkbox-list-item"
+                                                    checked={this.state.selectedPlans.includes(plans)}
+                                                    onChange={this.handlePlans}
+                                                    value={plans}
+                                                />
+                                            }
+                                            label={plans === "" ? "Otros" : `${plans}`}
+                                        />
+                                    ))}
+                                </div>
+                            </AccordionDetails>
+                        </Accordion>
+
                     </div>
                 </div>
             </>

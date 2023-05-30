@@ -4,7 +4,7 @@ import rectangle291 from "../../assets/rectangle291.svg";
 import iconlyLightOutlineS from "../../assets/search.svg";
 import iconlyLightOutlineF from "../../assets/person.svg";
 import iconlyLightOutlineH from "../../assets/iconlyLightOutlineH.svg";
-import fill1152 from "../../assets/fill1152.svg";
+import limoslogo from "../../assets/limos.jpg";
 import iconlyLightOutlineC from "../../assets/person-vcard.svg";
 import ellipse1 from "../../assets/ellipse1.svg";
 import iconlyLightOutlineC1 from "../../assets/calendar.svg";
@@ -21,8 +21,9 @@ class Left extends Component {
             <div className="left" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                 <div className="left-column-basegrid-rectangle">
                     <div className="flex-container">
-                        <img className="fill-1152" src={fill1152} />
-                        <span className="se">LIMOS</span>
+                        <span className="se">LIM</span>
+                        <img className="limoslogo" src={limoslogo} />
+                        <span className="se">S</span>
                     </div>
                     <NavLink to="/" className="left-sidebar-link">
                         <img className="iconly-light-outline-h" src={home} />

@@ -242,7 +242,7 @@ const Group45 = styled.div`
   gap: 15px;
 `;
 
-const Fill1152 = styled.img`
+const limoslogo = styled.img`
   width: 24px;
   height: 24px;
   margin-bottom: 1px;
