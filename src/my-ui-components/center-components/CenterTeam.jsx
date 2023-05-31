@@ -5,14 +5,13 @@ import Grid from '@mui/material/Grid';
 import { Component } from 'react';
 
 const users = [
-    { name: "Juan Pérez", specialty: "Nutricionista" },
-    { name: "María García", specialty: "Nutricionista" },
-    { name: "Pedro Rodríguez", specialty: "Secretaria" }
+    { name: "Juan", specialty: "Nutricionista", image: require("../../assets/juanito.jpg") },
+    { name: "María García", specialty: "Nutricionista", image: require("../../assets/Lucia.jpg") },
 ];
 
 const userItems = users.map((user, index) => (
     <Grid item xs={12} sm={6} md={4} key={index}>
-        <User name={user.name} specialty={user.specialty} />
+        <User name={user.name} specialty={user.specialty} image={user.image} />
     </Grid>
 ));
 

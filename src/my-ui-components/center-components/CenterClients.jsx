@@ -1,58 +1,51 @@
-import * as React from "react";
-import "../../App.css";
-import "../../style/CenterClients.css";
+import React, { Component } from "react";
 import Client from "./Client.jsx";
+import "../../style/CenterClients.css";
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-
-import { Component } from 'react';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import TextField from '@mui/material/TextField';
-
+import SearchBar from "./SearchBar.jsx";
 
 const clients = [
     {
-        name: "Juan Pérez",
-        profesional: "Dr. Luisa González",
-        place: "Consulta Presencial",
-        plan: "LBP Deporte y Salud",
-        lastConsultDate: "23 de abril de 2022",
-        hora: "10:00 am"
-    },
-    {
-        name: "María García",
-        profesional: "Dr. Roberto Sánchez",
+        name: "Lucia García",
+        profesional: "Juan Diaz Cobiella",
         place: "Consulta Presencial",
         plan: "LNP Élite",
-        lastConsultDate: "15 de mayo de 2022",
-        hora: "2:30 pm"
+        lastConsultDate: "2022-05-15",
+        hora: "2:30 pm",
+        image: require("../../assets/Lucia.jpg")    
     },
     {
-        name: "Pedro Rodríguez",
-        profesional: "Dr. Ana Hernández",
+        name: "Pedro Pérez",
+        profesional: "Juan Diaz Cobiella",
+        place: "Consulta Presencial",
+        plan: "LNP Deporte y Salud",
+        lastConsultDate: "2022-05-10",
+        hora: "10:00 am",
+        image: require("../../assets/Pedro.jpg")
+    },
+    {
+        name: "Richy Rodríguez",
+        profesional: "Lucía Martín Fontes",
         place: "Consulta Presencial",
         plan: "LNP Élite",
-        lastConsultDate: "7 de junio de 2022",
-        hora: "4:45 pm"
+        lastConsultDate: "2022-03-01",
+        hora: "4:45 pm",
+        image: require("../../assets/Richy.jpg")
     }
 ];
-
-
 
 class CenterClients extends Component {
     constructor(props) {
         super(props);
         this.state = {
             searchTerm: "",
-            selectedPlace: [],
-            selectedOrderBys: [],
-            selectedFilters: [],
-            selectedPlans: [],
-            selectedProfesionals: [], // Corregido aquí
             openDialog: false,
             newClient: {
                 name: "",
@@ -67,11 +60,6 @@ class CenterClients extends Component {
         };
     }
 
-    handleSearch = (event) => {
-        const searchTerm = event.target.value;
-        this.setState({ searchTerm });
-    };
-
     handleAddClient = () => {
         this.setState({ openDialog: true });
     };
@@ -80,9 +68,19 @@ class CenterClients extends Component {
         this.setState({ openDialog: false });
     };
 
+    handleAddNewClient = () => {
+        const { newClient } = this.state;
+        // Aquí puedes realizar la lógica para agregar el nuevo cliente
+        this.setState({ openDialog: false });
+    };
+
+    handleSearch = (searchTerm) => {
+        this.setState({ searchTerm: searchTerm });
+    };
+
     handleInputChange = (event) => {
         const { name, value } = event.target;
-        this.setState(prevState => ({
+        this.setState((prevState) => ({
             newClient: {
                 ...prevState.newClient,
                 [name]: value
@@ -90,46 +88,53 @@ class CenterClients extends Component {
         }));
     };
 
-    handleAddNewClient = () => {
-        const { newClient } = this.state;
-        // Aquí puedes realizar la lógica para agregar el nuevo cliente
-        console.log(newClient);
-        this.setState({ openDialog: false });
-    };
-
-    // Este método se ejecuta cuando se cambia el filtro
-    handleFilterChange = (selectedPlace, selectedOrderBys, selectedProfesionals, selectedPlans) => {
-        this.setState({ selectedPlace, selectedOrderBys, selectedProfesionals, selectedPlans });
-    };
-
     render() {
         const { searchTerm, openDialog, newClient } = this.state;
-        const { selectedPlace, selectedOrderBys, selectedProfesionals, selectedPlans } = this.props;
-        // Obtén las propiedades pasadas desde Clients
-        console.log(this.props, this.state);
+        const { selectedProfesionals, selectedPlace, selectedPlans, selectedOrderBy } = this.props;
 
-        // Utiliza los filtros en la lógica de filtrado
-        const filteredClients = clients
-            .filter(client => {
-                if (this.props.selectedPlace) {
-                    console.log(this.props.selectedPlace, client.place, selectedPlace.includes(client.place));
-                    return selectedPlace.includes(client.place);
+        // Filtrar los clientes según los profesionales seleccionados
+        const filteredClients = clients.filter(client => {
+            // Filtrar por profesionales
+            if (selectedProfesionals && selectedProfesionals.length > 0) {
+                if (!selectedProfesionals.includes(client.profesional)) {
+                    return false;
                 }
-                if (this.props.selectedProfesionals) {
-                    return selectedProfesionals.includes(client.profesional);
-                }
-                if (this.props.selectedPlans) {
-                    return selectedPlans.includes(client.plan);
-                }
-            })
+            }
 
-        if (
-            !this.props.selectedPlace ||
-            !this.props.selectedProfesionals ||
-            !this.props.selectedPlans
-        ) {
-            // No se cumple algún filtro, devolver todos los clientes
-            return client;
+            // Filtrar por lugar
+            if (selectedPlace && selectedPlace.length > 0) {
+                if (!selectedPlace.includes(client.place)) {
+                    return false;
+                }
+            }
+
+            // Filtrar por plan
+            if (selectedPlans && selectedPlans.length > 0) {
+                if (!selectedPlans.includes(client.plan)) {
+                    return false;
+                }
+            }
+
+            // Filtrar y ordenar por orderBy
+            if (selectedOrderBy === "A-Z") {
+                return true; // No se aplica filtro adicional, se mantiene en la lista
+            } else if (selectedOrderBy === "Fecha de ultima consulta") {
+                return true; // No se aplica filtro adicional, se mantiene en la lista
+            }
+
+            if(searchTerm && searchTerm.length > 0) {
+                return client.name.toLowerCase().includes(searchTerm.toLowerCase());
+            }
+
+            return true; // Mostrar el cliente si cumple todos los filtros seleccionados
+        });
+
+        // Filtrar por orderBy
+        if (selectedOrderBy && selectedOrderBy.includes("A-Z")) {
+            filteredClients.sort((a, b) => a.name.localeCompare(b.name));
+        }
+        if (selectedOrderBy && selectedOrderBy.includes("LastConsultDate")) {
+            filteredClients.sort((a, b) => new Date(a.lastConsultDate) - new Date(b.lastConsultDate))
         }
 
         const clientCount = (
@@ -147,10 +152,10 @@ class CenterClients extends Component {
                     plan={client.plan}
                     lastConsultDate={client.lastConsultDate}
                     hora={client.hora}
+                    image={client.image}
                 />
             </Grid>
         ));
-
 
         return (
             <div className="center-column-basegrid-rectangle">
@@ -161,7 +166,7 @@ class CenterClients extends Component {
                 </div>
                 <div className="search-bar-container">
                     <div className="search-bar">
-                        <SearchBar value={searchTerm} onChange={this.handleSearch} />
+                        <SearchBar onSearch={this.handleSearch} />
                     </div>
                     <Button variant="outlined" color="primary" onClick={this.handleAddClient}>
                         Añadir Cliente
@@ -246,23 +251,6 @@ class CenterClients extends Component {
                     {clientCount}
                     {clientItems}
                 </Grid>
-            </div>
-        );
-    }
-}
-
-class SearchBar extends Component {
-    render() {
-        const { value, onChange } = this.props;
-
-        return (
-            <div>
-                <input
-                    type="text"
-                    placeholder="Buscar cliente..."
-                    value={value}
-                    onChange={onChange}
-                />
             </div>
         );
     }

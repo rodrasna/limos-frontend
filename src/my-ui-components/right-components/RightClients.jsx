@@ -21,11 +21,10 @@ class RightClients extends Component {
             selectedPlace: [],
             selectedProfesionals: [],
             selectedOrderBy: [],
-            selectedProfesionals: [],
             selectedPlans: [],
         };
     }
-    
+
 
     componentDidMount() {
         window.addEventListener("resize", this.handleResize);
@@ -42,7 +41,7 @@ class RightClients extends Component {
     //handleOrderBy - this function will handle the order by select box
     handleOrderBy = (event) => {
         const selectedValue = event.target.value;
-        const selectedOrderBy = this.state.selectedOrderBy;
+        const selectedOrderBy = [...this.state.selectedOrderBy]; // Copia el array existente para evitar mutaciones directas
         const selectedIndex = selectedOrderBy.indexOf(selectedValue);
 
         if (selectedIndex === -1) {
@@ -52,47 +51,53 @@ class RightClients extends Component {
             // remove the value from the selected users array
             selectedOrderBy.splice(selectedIndex, 1);
         }
-        this.props.onFilterChange(selectedOrderBy);
-        console.log(selectedOrderBy);
+        this.props.onFilterChange(this.state.selectedPlace, selectedOrderBy, this.state.selectedProfesionals, this.state.selectedPlans);
         this.setState({ selectedOrderBy });
     };
 
     handlePlace = (event) => {
         const selectedValue = event.target.value;
-        const selectedPlace = this.state.selectedPlace;
+        const selectedPlace = [...this.state.selectedPlace];
         const selectedIndex = selectedPlace.indexOf(selectedValue);
 
         if (selectedIndex === -1) {
-            // add the value to the selected users array
+            // add the value to the selected options array
             selectedPlace.push(selectedValue);
         } else {
-            // remove the value from the selected users array
+            // remove the value from the selected options array
             selectedPlace.splice(selectedIndex, 1);
         }
-        this.props.onFilterChange(selectedPlace);
-        console.log(selectedPlace);
+        this.props.onFilterChange(selectedPlace, this.state.selectedOrderBy, this.state.selectedProfesionals, this.state.selectedPlans);
         this.setState({ selectedPlace });
     };
 
     handleProfesionals = (event) => {
         const selectedValue = event.target.value;
-        const selectedProfesionals = this.state.selectedProfesionals;
+        const selectedProfesionals = [...this.state.selectedProfesionals];
         const selectedIndex = selectedProfesionals.indexOf(selectedValue);
 
         if (selectedIndex === -1) {
-            // add the value to the selected options array
+            // Agregar el valor al array de profesionales seleccionados
             selectedProfesionals.push(selectedValue);
         } else {
-            // remove the value from the selected options array
+            // Eliminar el valor del array de profesionales seleccionados
             selectedProfesionals.splice(selectedIndex, 1);
         }
-        this.props.onFilterChange(selectedProfesionals);
-        console.log(selectedProfesionals);
+
+        // Actualizar el estado y llamar a la función de filtro del padre
         this.setState({ selectedProfesionals });
+        this.props.onFilterChange(
+            this.state.selectedPlace,
+            this.state.selectedOrderBy,
+            selectedProfesionals,
+            this.state.selectedPlans
+        );
     };
+
+
     handlePlans = (event) => {
         const selectedValue = event.target.value;
-        const selectedPlans = this.state.selectedPlans;
+        const selectedPlans = [...this.state.selectedPlans];
         const selectedIndex = selectedPlans.indexOf(selectedValue);
 
         if (selectedIndex === -1) {
@@ -102,14 +107,33 @@ class RightClients extends Component {
             // remove the value from the selected options array
             selectedPlans.splice(selectedIndex, 1);
         }
-        this.props.onFilterChange(selectedPlans);
-        console.log(selectedPlans);
+        this.props.onFilterChange(this.state.selectedPlace, this.state.selectedOrderBy, this.state.selectedProfesionals, selectedPlans);
         this.setState({ selectedPlans });
     };
 
 
 
+
     render() {
+        const clients = [
+            {
+                name: "María García",
+                profesional: "Juan Diaz Cobiella",
+                place: "Consulta Presencial",
+                plan: "LNP Élite",
+                lastConsultDate: "15 de mayo de 2022",
+                hora: "2:30 pm"
+            },
+            {
+                name: "Pedro Rodríguez",
+                profesional: "Lucía Martín Fontes",
+                place: "Consulta Presencial",
+                plan: "LNP Élite",
+                lastConsultDate: "7 de junio de 2022",
+                hora: "4:45 pm"
+            }
+        ];
+
         const isSmallScreen = this.state.width < 768;
         const rightColumnBasegridRectangleClassNames = isSmallScreen
             ? "right-column-basegrid-rectangle small-screen"
@@ -183,18 +207,18 @@ class RightClients extends Component {
                             </AccordionSummary>
                             <AccordionDetails>
                                 <div className="checkbox-list">
-                                    {["Juan Diaz Cobiella", "Lucía Martín Fontes"].map((profesionals) => (
+                                    {clients.map((client) => (
                                         <FormControlLabel
-                                            key={profesionals}
+                                            key={client.profesional}
                                             control={
                                                 <Checkbox
                                                     className="checkbox-list-item"
-                                                    checked={this.state.selectedProfesionals.includes(profesionals)}
+                                                    checked={this.state.selectedProfesionals.includes(client.profesional)}
                                                     onChange={this.handleProfesionals}
-                                                    value={profesionals}
+                                                    value={client.profesional}
                                                 />
                                             }
-                                            label={profesionals === "" ? "Otros" : `${profesionals}`}
+                                            label={client.profesional}
                                         />
                                     ))}
                                 </div>

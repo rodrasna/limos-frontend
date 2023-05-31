@@ -5,20 +5,20 @@ import PeticionConsulta from "./PeticionConsulta";
 const ProximasPeticionesConsulta = () => {
   const peticionesConsulta = [
     {
-      imageSrc: "ruta/imagen1.jpg",
-      clientName: "Cliente 1"
+      imageSrc: require("../../assets/Richy.jpg"),
+      clientName: "Jairo"
     },
     {
-      imageSrc: "ruta/imagen2.jpg",
-      clientName: "Cliente 2"
+      imageSrc: require("../../assets/Richy.jpg"),
+      clientName: "Richy"
     },
     {
-      imageSrc: "ruta/imagen3.jpg",
-      clientName: "Cliente 3"
+      imageSrc: require("../../assets/Lucia.jpg"),
+      clientName: "Lucia"
     },
     {
-      imageSrc: "ruta/imagen4.jpg",
-      clientName: "Cliente 4"
+      imageSrc: require("../../assets/Pedro.jpg"),
+      clientName: "Pedro"
     }
   ];
 

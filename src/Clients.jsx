@@ -21,8 +21,8 @@ class Clients extends Component {
     }
   }
 
-  handleFilterChange = (selectedPlace) => {
-    this.setState({ selectedPlace });
+  handleFilterChange = (selectedPlace, selectedOrderBy, selectedProfesionals, selectedPlans) => {
+    this.setState({ selectedPlace, selectedOrderBy, selectedProfesionals, selectedPlans });
   };
 
 
@@ -41,7 +41,9 @@ class Clients extends Component {
               selectedPlace={this.state.selectedPlace}
               selectedProfesionals={this.state.selectedProfesionals}
               selectedPlans={this.state.selectedPlans}
-            />          
+              selectedOrderBy={this.state.selectedOrderBy}
+              onFilterChange={this.handleFilterChange} // Agrega esta línea para pasar la función de manejo de filtro
+            />
           </Grid>
           <div className="vertical-home-grid-divider">
             <img src={rectangle2}></img>
