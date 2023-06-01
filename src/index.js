@@ -4,19 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import Agenda from './Agenda';
-import Users from './Users';
-import Clients from './Clients';
-import Library from './Library';
-import Pay from './Pay';
-import Statistic from './Statistic';
+import Agenda from './components/Agenda/Agenda';
+import Users from './components/Team/Users';
+import Clients from './components/Clients/Clients';
+import Library from './components/Library/Library';
+import Pay from './components/Pay/Pay';
+import Statistic from './components/Statistic/Statistic';
 
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { Amplify } from 'aws-amplify';
 import awsExports from './aws-exports';
-import Statistics from './my-ui-components/right-components/Statistics';
+import Statistics from './components/right-components/Statistics';
 Amplify.configure(awsExports);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

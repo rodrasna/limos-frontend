@@ -1,13 +1,9 @@
 .user-rectangle {
   background-color: #f7f7f7;
   border-radius: 20px;
-  flex-direction: row;
-  flex-basis: 9%;
-  justify-content: space-around;
-  align-items: center;
-  font-weight: 600;
   display: flex;
-  padding: 10px;
+  align-items: center;
+  padding: 20px;
 }
 
 .user-image-rectangle {
@@ -18,16 +14,40 @@
 }
 
 .user-data-container {
-  height: 40%;
+  flex: 1;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: stretch;
-  margin-top: 1px;
-  margin-bottom: 1px;
-  display: flex;
+  margin-left: 10px;
 }
 
-.time {
-  color: #bdbdbd;
+.user-name {
+  font-weight: 600;
+  margin: 0;
+}
+
+.specialty-container {
+  display: flex;
+  align-items: center;
+}
+
+.grade-icon {
+  margin-right: 5px;
+}
+
+.specialty-label {
   font-weight: 400;
+  color: #bdbdbd;
+}
+
+.right-side {
+  margin-left: auto;
+}
+
+.view-profile-button {
+  /* Agrega estilos adicionales para el botón "Ver más" si es necesario */
+}
+
+.user-option {
+  /* Estilos para el icono de opciones si es necesario */
 }
