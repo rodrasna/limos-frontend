@@ -1,0 +1,172 @@
+/* CENTER */
+.center-column-basegrid-rectangle {
+  color: #bdbdbd;
+  background-color: #fff;
+  border-radius: 40px 0 0 40px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: .875rem;
+  display: flex;
+}
+
+.hello-welcome {
+  letter-spacing: 1px;
+  color: #369fff;
+  margin-bottom: 14px;
+  font-size: 1.125rem;
+  line-height: 25px;
+}
+
+.title-container {
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: left;
+  margin-top: 1px;
+  margin-left: 2px;
+  font-size: .875rem;
+  font-weight: 700;
+  line-height: 19px;
+  display: block;
+}
+
+.section-title {
+  line-height: 70px;
+  font-style: normal;
+  font-size: 30px;
+
+  /* Black font */
+  color: #303030;
+}
+
+.view-all {
+  color: #369fff;
+  margin-top: 3px;
+  font-weight: 500;
+  padding-left: 20px;
+}
+
+/* CONSULTA */
+
+.consulta-rectangle {
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  flex-direction: row;
+  flex-basis: 9%;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: 600;
+  display: flex;
+  padding: 20px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.consulta-rectangle.clicked {
+  background-color: rgb(255, 254, 205); /* Azul más oscuro al hacer clic */
+}
+
+.consulta-rectangle.hovered {
+  background-color: #d2d2d2; /* Azul claro al pasar el cursor por encima */
+}
+
+.consulta-image-client-rectangle {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.consulta-data-client-container {
+  height: 40%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  display: flex;
+}
+
+.client-name {
+  color: #535353;
+  font-weight: 500;
+  font-style: bold;
+}
+
+.time {
+  color: #ffffff;
+  font-weight: 400;
+}
+
+/* DIETA */
+
+.uppershadow-dieta-rectangle {
+  margin-left: auto;
+  margin-top: auto;
+  position: absolute;
+  display: -webkit-box;
+  align-self: flex-start;
+}
+
+.lowershadow-dieta-rectangle {
+  margin-left: auto;
+  margin-right: 0%;
+  object-fit: cover;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.dieta-rectangle {
+  width: 100%;
+  height: 100px;
+  background-color: #369fff;
+  box-shadow: 0px 10px 30px #369fff66;
+  border-radius: 10px;
+  align-items: center;
+  display: flex;
+  position: relative;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.dieta-rectangle.clicked {
+  background-color: #235ea2; /* Azul más oscuro al hacer clic */
+}
+
+.dieta-rectangle.hovered {
+  background-color: #a6c6f7; /* Azul claro al pasar el cursor por encima */
+}
+
+.dieta-container {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  padding-top: 10px;
+}
+
+
+.dieta-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.dieta-tipo {
+  font-size: 12px;
+  color: white;
+  margin: 0;
+}
+
+.dieta-image-client-rectangle {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 30px;
+  padding: 10px;
+}

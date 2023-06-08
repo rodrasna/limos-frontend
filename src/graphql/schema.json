@@ -6333,7 +6333,7 @@
         "onField" : false
       }, {
         "name" : "aws_cognito_user_pools",
-        "description" : "Tells the service this field/object has access authorized by a Cognito User Pools token.",
+        "description" : "Tells the service this field/object has access authorized by a Cognito TeamMember Pools token.",
         "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
         "args" : [ {
           "name" : "cognito_groups",

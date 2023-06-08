@@ -1,9 +1,7 @@
 import * as React from "react";
-import "../../style/Right.css";
-
+import "./Right.css";
 import { Component } from 'react';
-import Statistics from "./Statistics";
-import Profile from "./Profile";
+import Statistics from "../StatisticBase/Statistics";
 import Calendar from "./Calendar";
 
 class Right extends Component {
@@ -33,7 +31,6 @@ class Right extends Component {
         return (
             <>
                 <div className={rightColumnBasegridRectangleClassNames}>
-                    <Profile></Profile>
                     <div className="title-container">
                         <span className="section-title">Estadísticas</span>
                         <span className="view-all">Ver todo</span>
