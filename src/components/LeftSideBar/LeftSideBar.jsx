@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./LeftSideBar.css";
 import iconlyLightOutlineS from "../../assets/search.svg";
-import iconlyLightOutlineF from "../../assets/person.svg";
-import iconlyLightOutlineC from "../../assets/person-vcard.svg";
-import iconlyLightOutlineC1 from "../../assets/calendar.svg";
+import team from "../../assets/person.svg";
+import clients from "../../assets/person-vcard.svg";
+import calendar from "../../assets/calendar.svg";
 import pay from "../../assets/credit-card.svg";
 import statistic from "../../assets/bar-chart-line.svg";
 import home from "../../assets/house.svg";
@@ -19,15 +19,15 @@ const LeftSideBar = ({expanded}) => {
             {expanded && <span className="overview">Inicio</span>}
           </NavLink>
           <NavLink to="/agenda" className="left-sidebar-link">
-            <img className="iconly-light-outline-c-1" src={iconlyLightOutlineC1} alt="Agenda" />
+            <img className="iconly-light-outline-c-1" src={calendar} alt="Agenda" />
             {expanded && <span className="course">Agenda</span>}
           </NavLink>
           <NavLink to="/team" className="left-sidebar-link">
-            <img className="iconly-light-outline-f" src={iconlyLightOutlineF} alt="Equipo" />
+            <img className="iconly-light-outline-f" src={team} alt="Equipo" />
             {expanded && <span className="resources">Equipo</span>}
           </NavLink>
           <NavLink to="/clients" className="left-sidebar-link">
-            <img className="iconly-light-outline-c" src={iconlyLightOutlineC} alt="Clientes" />
+            <img className="iconly-light-outline-c" src={clients} alt="Clientes" />
             {expanded && <span className="message">Clientes</span>}
           </NavLink>
           <NavLink to="/library" className="left-sidebar-link">

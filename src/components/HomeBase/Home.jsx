@@ -2,7 +2,7 @@ import * as React from "react";
 import "./HomeBase.css";
 import Grid from "@mui/material/Grid";
 import CenterHome from "../HomeBase/CenterHome";
-import Right from "../right-components/Right";
+import RightHome from "./RightHome";
 import LeftSideBar from "../LeftSideBar/LeftSideBar";
 import rectangle2 from "../../assets/rectangle2.svg";
 import Banner from "../Banner/Banner";
@@ -27,7 +27,7 @@ const Home = () => {
                 <img src={rectangle2} alt="Vertical divider" />
             </div>
             <Grid item xs={rightSize} md={3}>
-                <Right />
+                <RightHome />
             </Grid>
         </>
     );

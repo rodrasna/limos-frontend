@@ -17,7 +17,6 @@ const Dieta = ({ title, tipo, image }) => {
   };
 
   const handleClick = () => {
-    setIsClicked(!isClicked);
     setIsHovered(false);
   };
   return (

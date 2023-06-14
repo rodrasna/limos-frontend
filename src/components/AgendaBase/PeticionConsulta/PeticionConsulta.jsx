@@ -1,29 +1,49 @@
-import "../../../App.css";
-import moreVertical6 from "../../../assets/moreVertical6.svg";
-import checkSquare from "../../../assets/check-square.svg";
-import xSquare from "../../../assets/x-square.svg";
-import "./PeticionConsulta.css"
-import { Component } from 'react';
+import React, { useState } from "react";
 import { IconButton } from "@mui/material";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import CheckBoxOutlinedIcon from "@mui/icons-material/CheckBoxOutlined";
+import DisabledByDefaultOutlinedIcon from "@mui/icons-material/DisabledByDefaultOutlined";
+import "../AgendaBase.css";
 
-class PeticionConsulta extends Component {
-    render() {
-        const { imageSrc, clientName } = this.props;
+const PeticionConsulta = ({ imageSrc, clientName }) => {
+  const [accepted, setAccepted] = useState(false);
+  const [rejected, setRejected] = useState(false);
 
-        return (
-            <div className="peticion-consulta-rectangle">
-                <img className="peticion-consulta-image-client-rectangle" src={imageSrc} />
-                <div className="peticion-consulta-data-client-container">
-                    <span className="grammar-intermedia">{clientName}</span>
-                </div>
-                <IconButton className="accept-button"><img src={checkSquare}></img></IconButton>
-                <IconButton className="reject-button"><img src={xSquare}></img></IconButton>
-                <IconButton>
-                    <img className="peticion-consulta-option" src={moreVertical6} />
-                </IconButton>
-            </div>
-        );
-    }
-}
+  const handleAcceptClick = () => {
+    setAccepted(true);
+    setRejected(false);
+  };
+
+  const handleRejectClick = () => {
+    setAccepted(false);
+    setRejected(true);
+  };
+
+  const handleOptionClick = () => {
+    console.log("Se hizo clic en el botón de opciones de la petición de consulta del cliente:", clientName);
+  };
+
+  const rectangleClassNames = `peticion-consulta-rectangle ${accepted ? "accepted" : ""} ${rejected ? "rejected" : ""}`;
+
+  return (
+    <div className={rectangleClassNames}>
+      <img className="peticion-consulta-image-client-rectangle" src={imageSrc} alt="client" />
+      <div className="peticion-consulta-data-client-container">
+        <span className="grammar-intermedia">{clientName}</span>
+      </div>
+      <div className="button-group">
+        <IconButton className="accept-button" onClick={handleAcceptClick}>
+          <CheckBoxOutlinedIcon />
+        </IconButton>
+        <IconButton className="reject-button" onClick={handleRejectClick}>
+          <DisabledByDefaultOutlinedIcon />
+        </IconButton>
+      </div>
+      <IconButton onClick={handleOptionClick}>
+        <MoreVertIcon className="peticion-consulta-option" />
+      </IconButton>
+    </div>
+  );
+};
 
 export default PeticionConsulta;
