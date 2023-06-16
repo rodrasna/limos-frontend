@@ -1,39 +1,68 @@
 /* CLIENT */
 
 .client-rectangle {
-    background-color: #f7f7f7;
-    border-radius: 20px;
-    flex-direction: row;
-    flex-basis: 9%;
-    justify-content: space-around;
-    align-items: center;
-    font-weight: 600;
-    display: flex;
-    padding: 10px;
-  }
-  
-  .client-image-rectangle {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 20px;
-  }
-  
-  .client-data-container {
-    height: 40%;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: stretch;
-    margin-top: 1px;
-    margin-bottom: 1px;
-    display: flex;
-  }
-  
-  .time {
-    color: #bdbdbd;
-    font-weight: 400;
-  }
-  /* Estilos para la ventana emergente */
+  width: 80%;
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  flex-direction: row;
+  flex-basis: 9%;
+  justify-content: baseline;
+  align-items: center;
+  font-weight: 600;
+  display: flex;
+  padding: 20px;
+}
+
+.left-side {
+  width: 70%;
+  height: auto;
+}
+
+.client-image-rectangle {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.client-name {
+  display: flex;
+  padding-bottom: 5px;
+}
+
+.time {
+  color: #bdbdbd;
+  font-weight: 400;
+}
+
+.right-side {
+  width: 70%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  /* Espacio entre cada elemento */
+}
+
+.label {
+  margin-left: 5px;
+  height: 100%;
+  width: 100%;
+}
+
+.icon {
+  width: 24px;
+  /* Tamaño del icono */
+  height: 24px;
+}
+
+/* Estilos para la ventana emergente */
 .client-profile-modal {
   position: fixed;
   top: 50%;
@@ -75,39 +104,44 @@
 }
 
 .view-profile-button {
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 /* CENTER CLIENTS*/
 
 .search-bar-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
 .search-bar {
-    margin-right: 8px; /* Ajusta el margen a tu preferencia */
-  }
+  margin-right: 8px;
+  /* Ajusta el margen a tu preferencia */
+}
 
 /* RIGHT CLIENTS */
 
 .right-column-basegrid-rectangle {
-    color: #bdbdbd;
-    background-color: #fff;
-    border-radius: 40px 0 0 40px;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    font-size: .875rem;
-    display: flex;
-    margin: 0 auto;
+  color: #bdbdbd;
+  background-color: #fff;
+  border-radius: 40px 0 0 40px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: .875rem;
+  display: flex;
+  margin: 0 auto;
 }
 
 .filters-container {
-    max-width: 1000px; /* Establece la anchura máxima que desees */
-    margin: 0 auto; /* Centra horizontalmente */
-  }
-  
-  .Accordion-root {
-    width: 100%; /* Ancho al 100% para que se adapte automáticamente */
-  }
+  max-width: 1000px;
+  /* Establece la anchura máxima que desees */
+  margin: 0 auto;
+  /* Centra horizontalmente */
+}
+
+.Accordion-root {
+  width: 100%;
+  /* Ancho al 100% para que se adapte automáticamente */
+}

@@ -6,7 +6,7 @@ import DietasPendientes from "./Dieta/DietasPendientes";
 import ProximasConsultas from "./Consulta/ProximasConsultas";
 import Consulta from "./Consulta/Consulta";
 
-class Center extends Component {
+class   Center extends Component {
     render() {
         const consulta =
         {

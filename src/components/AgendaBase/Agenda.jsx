@@ -13,20 +13,23 @@ const Agenda = () => {
 
   const [expanded, setExpanded] = useState(true);
 
-  const centerSize = expanded ? 6 : 7;
+  const centerSize = expanded ? 10 : 7;
   const rightSize = expanded ? 2 : 3;
-  
+
   return (
     <><div className="vertical-home-grid-divider">
       <img src={rectangle2}></img>
-    </div><Grid item xs={centerSize}>
+    </div>
+      <Grid item xs={centerSize}>
         <CenterAgenda></CenterAgenda>
-      </Grid><div className="vertical-home-grid-divider">
+      </Grid>
+      {/* <div className="vertical-home-grid-divider">
         <img src={rectangle2}></img>
-      </div><Grid item xs={rightSize}>
+      </div>
+      <Grid item xs={rightSize}>
         <RightAgenda></RightAgenda>
-      </Grid></>
-
+      </Grid> */}
+    </>
   );
 };
 export default Agenda;

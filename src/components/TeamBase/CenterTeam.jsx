@@ -22,7 +22,7 @@ class CenterTeam extends Component {
                 
                 <div className="title-container">
                     <span className="section-title">Equipo</span>
-                    <span className="view-all">Ver todo</span>
+                    <span className="view-all">Ver todos</span>
                 </div>
                 <Grid container spacing={2}>
                     {userItems}

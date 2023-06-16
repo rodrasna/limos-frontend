@@ -6,6 +6,7 @@ import WorkIcon from '@mui/icons-material/Work';
 import RoomIcon from '@mui/icons-material/Room';
 import EventIcon from '@mui/icons-material/Event';
 import BoltIcon from '@mui/icons-material/Bolt';
+import { Button } from "@mui/material";
 
 // Establece la aplicación root como el elemento raíz para React Modal
 Modal.setAppElement("#root");
@@ -26,14 +27,12 @@ const Client = (props) => {
   return (
     <div className="client-rectangle">
       <div className="left-side">
-        <img className="client-image-rectangle" alt="client" src={image} />
         <div className="client-data-container">
+          <img className="client-image-rectangle" alt="client" src={image} />
           <span className="client-name">{name}</span>
-          <div>
-            <button className="view-profile-button" onClick={handleProfileClick}>
+            <Button className="view-profile-button" variant="contained" onClick={handleProfileClick}>
               Ver perfil
-            </button>
-          </div>
+            </Button>
         </div>
       </div>
       <div className="right-side">
