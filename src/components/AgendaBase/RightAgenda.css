@@ -6,9 +6,6 @@
   .checkbox-list-item {
     color: #1976d2;
     padding: 0 8px;
-    '&.Mui-checked': {
-      color: #1976d2;
-    }
   }
   
   .MuiFormControlLabel-label {
