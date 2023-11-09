@@ -1,138 +1,192 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateProfesional = /* GraphQL */ `
-  subscription OnCreateProfesional(
-    $filter: ModelSubscriptionProfesionalFilterInput
+export const onCreateProfessional = /* GraphQL */ `
+  subscription OnCreateProfessional(
+    $filter: ModelSubscriptionProfessionalFilterInput
   ) {
-    onCreateProfesional(filter: $filter) {
+    onCreateProfessional(filter: $filter) {
       id
-      nombre
-      apellido
+      firstName
+      lastName
+      specialty
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
-export const onUpdateProfesional = /* GraphQL */ `
-  subscription OnUpdateProfesional(
-    $filter: ModelSubscriptionProfesionalFilterInput
+export const onUpdateProfessional = /* GraphQL */ `
+  subscription OnUpdateProfessional(
+    $filter: ModelSubscriptionProfessionalFilterInput
   ) {
-    onUpdateProfesional(filter: $filter) {
+    onUpdateProfessional(filter: $filter) {
       id
-      nombre
-      apellido
+      firstName
+      lastName
+      specialty
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
-export const onDeleteProfesional = /* GraphQL */ `
-  subscription OnDeleteProfesional(
-    $filter: ModelSubscriptionProfesionalFilterInput
+export const onDeleteProfessional = /* GraphQL */ `
+  subscription OnDeleteProfessional(
+    $filter: ModelSubscriptionProfessionalFilterInput
   ) {
-    onDeleteProfesional(filter: $filter) {
+    onDeleteProfessional(filter: $filter) {
       id
-      nombre
-      apellido
+      firstName
+      lastName
+      specialty
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
-export const onCreateDietas = /* GraphQL */ `
-  subscription OnCreateDietas($filter: ModelSubscriptionDietasFilterInput) {
-    onCreateDietas(filter: $filter) {
+export const onCreateDiet = /* GraphQL */ `
+  subscription OnCreateDiet($filter: ModelSubscriptionDietFilterInput) {
+    onCreateDiet(filter: $filter) {
       id
-      clienteID
-      cliente
-      fechaEntrega
-      fechaConsulta
-      tiempoRealizacion
-      calorias
+      clientID
+      client
+      dateDelivery
+      dateConsult
+      timeRealization
+      calories
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
-export const onUpdateDietas = /* GraphQL */ `
-  subscription OnUpdateDietas($filter: ModelSubscriptionDietasFilterInput) {
-    onUpdateDietas(filter: $filter) {
+export const onUpdateDiet = /* GraphQL */ `
+  subscription OnUpdateDiet($filter: ModelSubscriptionDietFilterInput) {
+    onUpdateDiet(filter: $filter) {
       id
-      clienteID
-      cliente
-      fechaEntrega
-      fechaConsulta
-      tiempoRealizacion
-      calorias
+      clientID
+      client
+      dateDelivery
+      dateConsult
+      timeRealization
+      calories
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
-export const onDeleteDietas = /* GraphQL */ `
-  subscription OnDeleteDietas($filter: ModelSubscriptionDietasFilterInput) {
-    onDeleteDietas(filter: $filter) {
+export const onDeleteDiet = /* GraphQL */ `
+  subscription OnDeleteDiet($filter: ModelSubscriptionDietFilterInput) {
+    onDeleteDiet(filter: $filter) {
       id
-      clienteID
-      cliente
-      fechaEntrega
-      fechaConsulta
-      tiempoRealizacion
-      calorias
+      clientID
+      client
+      dateDelivery
+      dateConsult
+      timeRealization
+      calories
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
-export const onCreateConsultas = /* GraphQL */ `
-  subscription OnCreateConsultas(
-    $filter: ModelSubscriptionConsultasFilterInput
-  ) {
-    onCreateConsultas(filter: $filter) {
+export const onCreateConsult = /* GraphQL */ `
+  subscription OnCreateConsult($filter: ModelSubscriptionConsultFilterInput) {
+    onCreateConsult(filter: $filter) {
       id
-      cliente
-      seguimiento
-      fecha
-      lugar
-      aceptada
-      clienteID
+      client
+      Alternativas
+      date
+      place
+      accept
+      clientID
+      Client {
+        id
+        firstName
+        lastName
+        lastConsult
+        professional
+        email
+        phoneNumber
+        weight
+        place
+        createdAt
+        updatedAt
+        clientPlanId
+        clientAssignedProfessionalId
+        __typename
+      }
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
-export const onUpdateConsultas = /* GraphQL */ `
-  subscription OnUpdateConsultas(
-    $filter: ModelSubscriptionConsultasFilterInput
-  ) {
-    onUpdateConsultas(filter: $filter) {
+export const onUpdateConsult = /* GraphQL */ `
+  subscription OnUpdateConsult($filter: ModelSubscriptionConsultFilterInput) {
+    onUpdateConsult(filter: $filter) {
       id
-      cliente
-      seguimiento
-      fecha
-      lugar
-      aceptada
-      clienteID
+      client
+      Alternativas
+      date
+      place
+      accept
+      clientID
+      Client {
+        id
+        firstName
+        lastName
+        lastConsult
+        professional
+        email
+        phoneNumber
+        weight
+        place
+        createdAt
+        updatedAt
+        clientPlanId
+        clientAssignedProfessionalId
+        __typename
+      }
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
-export const onDeleteConsultas = /* GraphQL */ `
-  subscription OnDeleteConsultas(
-    $filter: ModelSubscriptionConsultasFilterInput
-  ) {
-    onDeleteConsultas(filter: $filter) {
+export const onDeleteConsult = /* GraphQL */ `
+  subscription OnDeleteConsult($filter: ModelSubscriptionConsultFilterInput) {
+    onDeleteConsult(filter: $filter) {
       id
-      cliente
-      seguimiento
-      fecha
-      lugar
-      aceptada
-      clienteID
+      client
+      Alternativas
+      date
+      place
+      accept
+      clientID
+      Client {
+        id
+        firstName
+        lastName
+        lastConsult
+        professional
+        email
+        phoneNumber
+        weight
+        place
+        createdAt
+        updatedAt
+        clientPlanId
+        clientAssignedProfessionalId
+        __typename
+      }
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
@@ -140,10 +194,11 @@ export const onCreatePlan = /* GraphQL */ `
   subscription OnCreatePlan($filter: ModelSubscriptionPlanFilterInput) {
     onCreatePlan(filter: $filter) {
       id
-      nombre
-      precio
+      name
+      price
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
@@ -151,10 +206,11 @@ export const onUpdatePlan = /* GraphQL */ `
   subscription OnUpdatePlan($filter: ModelSubscriptionPlanFilterInput) {
     onUpdatePlan(filter: $filter) {
       id
-      nombre
-      precio
+      name
+      price
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
@@ -162,190 +218,146 @@ export const onDeletePlan = /* GraphQL */ `
   subscription OnDeletePlan($filter: ModelSubscriptionPlanFilterInput) {
     onDeletePlan(filter: $filter) {
       id
-      nombre
-      precio
+      name
+      price
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
-export const onCreateCliente = /* GraphQL */ `
-  subscription OnCreateCliente($filter: ModelSubscriptionClienteFilterInput) {
-    onCreateCliente(filter: $filter) {
+export const onCreateClient = /* GraphQL */ `
+  subscription OnCreateClient($filter: ModelSubscriptionClientFilterInput) {
+    onCreateClient(filter: $filter) {
       id
-      nombre
-      lugar
-      ultimaConsulta
-      profesional
+      firstName
+      lastName
+      lastConsult
+      professional
       Plan {
         id
-        nombre
-        precio
+        name
+        price
         createdAt
         updatedAt
+        __typename
       }
       email
       phoneNumber
-      NutriAsignado {
+      assignedProfessional {
         id
-        nombre
-        apellido
+        firstName
+        lastName
+        specialty
         createdAt
         updatedAt
+        __typename
       }
-      Dietas {
-        items {
-          id
-          clienteID
-          cliente
-          fechaEntrega
-          fechaConsulta
-          tiempoRealizacion
-          calorias
-          createdAt
-          updatedAt
-        }
+      Diets {
         nextToken
+        __typename
       }
-      Consultas {
-        items {
-          id
-          cliente
-          seguimiento
-          fecha
-          lugar
-          aceptada
-          clienteID
-          createdAt
-          updatedAt
-        }
+      Consults {
         nextToken
+        __typename
       }
-      peso
+      weight
+      place
       createdAt
       updatedAt
-      clientePlanId
-      clienteNutriAsignadoId
+      clientPlanId
+      clientAssignedProfessionalId
+      __typename
     }
   }
 `;
-export const onUpdateCliente = /* GraphQL */ `
-  subscription OnUpdateCliente($filter: ModelSubscriptionClienteFilterInput) {
-    onUpdateCliente(filter: $filter) {
+export const onUpdateClient = /* GraphQL */ `
+  subscription OnUpdateClient($filter: ModelSubscriptionClientFilterInput) {
+    onUpdateClient(filter: $filter) {
       id
-      nombre
-      lugar
-      ultimaConsulta
-      profesional
+      firstName
+      lastName
+      lastConsult
+      professional
       Plan {
         id
-        nombre
-        precio
+        name
+        price
         createdAt
         updatedAt
+        __typename
       }
       email
       phoneNumber
-      NutriAsignado {
+      assignedProfessional {
         id
-        nombre
-        apellido
+        firstName
+        lastName
+        specialty
         createdAt
         updatedAt
+        __typename
       }
-      Dietas {
-        items {
-          id
-          clienteID
-          cliente
-          fechaEntrega
-          fechaConsulta
-          tiempoRealizacion
-          calorias
-          createdAt
-          updatedAt
-        }
+      Diets {
         nextToken
+        __typename
       }
-      Consultas {
-        items {
-          id
-          cliente
-          seguimiento
-          fecha
-          lugar
-          aceptada
-          clienteID
-          createdAt
-          updatedAt
-        }
+      Consults {
         nextToken
+        __typename
       }
-      peso
+      weight
+      place
       createdAt
       updatedAt
-      clientePlanId
-      clienteNutriAsignadoId
+      clientPlanId
+      clientAssignedProfessionalId
+      __typename
     }
   }
 `;
-export const onDeleteCliente = /* GraphQL */ `
-  subscription OnDeleteCliente($filter: ModelSubscriptionClienteFilterInput) {
-    onDeleteCliente(filter: $filter) {
+export const onDeleteClient = /* GraphQL */ `
+  subscription OnDeleteClient($filter: ModelSubscriptionClientFilterInput) {
+    onDeleteClient(filter: $filter) {
       id
-      nombre
-      lugar
-      ultimaConsulta
-      profesional
+      firstName
+      lastName
+      lastConsult
+      professional
       Plan {
         id
-        nombre
-        precio
+        name
+        price
         createdAt
         updatedAt
+        __typename
       }
       email
       phoneNumber
-      NutriAsignado {
+      assignedProfessional {
         id
-        nombre
-        apellido
+        firstName
+        lastName
+        specialty
         createdAt
         updatedAt
+        __typename
       }
-      Dietas {
-        items {
-          id
-          clienteID
-          cliente
-          fechaEntrega
-          fechaConsulta
-          tiempoRealizacion
-          calorias
-          createdAt
-          updatedAt
-        }
+      Diets {
         nextToken
+        __typename
       }
-      Consultas {
-        items {
-          id
-          cliente
-          seguimiento
-          fecha
-          lugar
-          aceptada
-          clienteID
-          createdAt
-          updatedAt
-        }
+      Consults {
         nextToken
+        __typename
       }
-      peso
+      weight
+      place
       createdAt
       updatedAt
-      clientePlanId
-      clienteNutriAsignadoId
+      clientPlanId
+      clientAssignedProfessionalId
+      __typename
     }
   }
 `;

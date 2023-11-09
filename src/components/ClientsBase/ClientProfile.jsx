@@ -37,15 +37,15 @@ class ClientProfile extends Component {
 
     render() {
         const { anchorEl, showProfile } = this.state;
-        const { name, profesional, place, plan, lastConsultDate, hora } = this.props;
+        const { firstName, lastName, professional, place, plan, lastConsultDate, hora } = this.props;
 
         return (
             <div className="client-profile-rectangle">
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={8}>
                         <div className="client-profile-details">
-                            <Typography variant="h6">{name}</Typography>
-                            <Typography variant="body1">Profesional: {profesional}</Typography>
+                            <Typography variant="h6">{firstName} {lastName}</Typography>
+                            <Typography variant="body1">Profesional: {professional}</Typography>
                             <Typography variant="body1">Lugar: {place}</Typography>
                             <Typography variant="body1">Plan: {plan}</Typography>
                             <Typography variant="body1">Última consulta: {lastConsultDate}</Typography>
@@ -88,11 +88,13 @@ class ClientProfile extends Component {
                     <DialogTitle>Perfil del Cliente</DialogTitle>
                     <DialogContent>
                         <ClientProfile
-                            name={name}
-                            profesional={profesional}
+                            firstName={firstName}
+                            lastName={lastName}
+                            professional={professional}
                             place={place}
                             plan={plan}
                             lastConsultDate={lastConsultDate}
+                            hora={hora}
                         />
                     </DialogContent>
                     <DialogActions>

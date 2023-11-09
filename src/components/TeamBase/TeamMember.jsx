@@ -6,7 +6,7 @@ import GradeIcon from "@mui/icons-material/Grade";
 import { Button } from "@mui/material";
 
 const TeamMember = (props) => {
-  const { name, specialty, image } = props;
+  const { firstName, lastName, specialty, image } = props;
   const [showProfile, setShowProfile] = useState(false);
 
   const handleProfileClick = () => {
@@ -18,7 +18,8 @@ const TeamMember = (props) => {
       <div className="left-side">
         <div className="user-data-container">
           <img className="user-image-rectangle" src={image} alt="user" />
-          <span className="user-name">{name}</span>
+          <span className="user-firstName">{firstName}</span>
+          <span className="user-lastName">{lastName}</span>
           <div className="specialty-container">
             <GradeIcon className="grade-icon" alt="specialty" />
             <span className="specialty-label">{specialty}</span>

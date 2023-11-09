@@ -10,36 +10,8 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import TextField from '@mui/material/TextField';
 import SearchBar from "./SearchBar.jsx";
-
-const clients = [
-    {
-        name: "Lucia García",
-        profesional: "Juan Diaz Cobiella",
-        place: "Consulta Presencial",
-        plan: "LNP Élite",
-        lastConsultDate: "2022-05-15",
-        hora: "2:30 pm",
-        image: require("../../assets/Lucia.jpg")    
-    },
-    {
-        name: "Pedro Pérez",
-        profesional: "Juan Diaz Cobiella",
-        place: "Consulta Presencial",
-        plan: "LNP Deporte y Salud",
-        lastConsultDate: "2022-05-10",
-        hora: "10:00 am",
-        image: require("../../assets/Pedro.jpg")
-    },
-    {
-        name: "Richy Rodríguez",
-        profesional: "Lucía Martín Fontes",
-        place: "Consulta Presencial",
-        plan: "LNP Élite",
-        lastConsultDate: "2022-03-01",
-        hora: "4:45 pm",
-        image: require("../../assets/Richy.jpg")
-    }
-];
+import { API, graphqlOperation } from 'aws-amplify';
+import { listClients } from '../../graphql/queries';
 
 class CenterClients extends Component {
     constructor(props) {
@@ -56,7 +28,8 @@ class CenterClients extends Component {
                 phone: "",
                 address: "",
                 plan: ""
-            }
+            },
+            clients: []
         };
     }
 
@@ -70,7 +43,6 @@ class CenterClients extends Component {
 
     handleAddNewClient = () => {
         const { newClient } = this.state;
-        // Aquí puedes realizar la lógica para agregar el nuevo cliente
         this.setState({ openDialog: false });
     };
 
@@ -88,41 +60,50 @@ class CenterClients extends Component {
         }));
     };
 
+    componentDidMount() {
+        this.fetchClients();
+    }
+
+    fetchClients = async () => {
+        try {
+            const clientData = await API.graphql(graphqlOperation(listClients));
+            const clientsWithPlans = clientData.data.listClients.items.map(client => ({
+                ...client,
+                planName: client.Plan ? client.Plan.name : 'Plan desconocido'
+            }));
+            this.setState({ clients: clientsWithPlans });
+        } catch (error) {
+            console.error('Error fetching clients', error);
+        }
+    };
+
     render() {
-        const { searchTerm, openDialog, newClient } = this.state;
+        const { searchTerm, openDialog, newClient, clients } = this.state;
         const { selectedProfesionals, selectedPlace, selectedPlans, selectedOrderBy } = this.props;
 
-        // Filtrar los clientes según los profesionales seleccionados
         const filteredClients = clients.filter(client => {
-            // Filtrar por profesionales
             if (selectedProfesionals && selectedProfesionals.length > 0) {
-                if (!selectedProfesionals.includes(client.profesional)) {
+                if (!selectedProfesionals.includes(client.professional)) {
                     return false;
                 }
             }
-
-            // Filtrar por lugar
             if (selectedPlace && selectedPlace.length > 0) {
                 if (!selectedPlace.includes(client.place)) {
                     return false;
                 }
             }
-
-            // Filtrar por plan
             if (selectedPlans && selectedPlans.length > 0) {
-                if (!selectedPlans.includes(client.plan)) {
+                if (!selectedPlans.includes(client.planName)) {
                     return false;
                 }
             }
-
-            // Filtrar y ordenar por orderBy
             if (selectedOrderBy === "A-Z") {
                 return true; // No se aplica filtro adicional, se mantiene en la lista
             } else if (selectedOrderBy === "Fecha de ultima consulta") {
                 return true; // No se aplica filtro adicional, se mantiene en la lista
             }
 
-            if(searchTerm && searchTerm.length > 0) {
+            if (searchTerm && searchTerm.length > 0) {
                 return client.name.toLowerCase().includes(searchTerm.toLowerCase());
             }
 
@@ -131,10 +112,10 @@ class CenterClients extends Component {
 
         // Filtrar por orderBy
         if (selectedOrderBy && selectedOrderBy.includes("A-Z")) {
-            filteredClients.sort((a, b) => a.name.localeCompare(b.name));
-        }
+            filteredClients.sort((a, b) => a.firstName.localeCompare(b.firstName));
+        }        
         if (selectedOrderBy && selectedOrderBy.includes("LastConsultDate")) {
-            filteredClients.sort((a, b) => new Date(a.lastConsultDate) - new Date(b.lastConsultDate))
+            filteredClients.sort((a, b) => new Date(a.lastConsult) - new Date(b.lastConsult));
         }
 
         const clientCount = (
@@ -146,12 +127,13 @@ class CenterClients extends Component {
         const clientItems = filteredClients.map((client, index) => (
             <Grid item xs={12} sm={6} key={index}>
                 <Client
-                    name={client.name}
-                    profesional={client.profesional}
+                    firstName={client.firstName}
+                    lastName={client.lastName}
+                    professional={client.professional}
                     place={client.place}
-                    plan={client.plan}
-                    lastConsultDate={client.lastConsultDate}
-                    hora={client.hora}
+                    plan={client.planName}
+                    lastConsult={client.lastConsult}
+                    hora="22:00"
                     image={client.image}
                 />
             </Grid>
@@ -159,7 +141,7 @@ class CenterClients extends Component {
 
         return (
             <div className="center-column-basegrid-rectangle">
-                
+
                 <div className="title-container">
                     <span className="section-title">Clientes</span>
                     <span className="view-all">Ver todo</span>

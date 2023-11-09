@@ -4,11 +4,12 @@
  * Any changes to this file will be overwritten when running amplify pull. *
  **************************************************************************/
 
-export { default as Botonmasclientes } from "./Botonmasclientes";
-export { default as Leftbar } from "./Leftbar";
-export { default as Clienteview } from "./Clienteview";
-export { default as Dieta } from "./Dieta";
-export { default as Consulta } from "./Consulta";
-export { default as Profesional } from "./Profesional";
-export { default as PeticionConsulta } from "./PeticionConsulta";
+export { default as ClientCreateForm } from "./ClientCreateForm";
+export { default as ClientUpdateForm } from "./ClientUpdateForm";
+export { default as DietCreateForm } from "./DietCreateForm";
+export { default as DietUpdateForm } from "./DietUpdateForm";
+export { default as PlanCreateForm } from "./PlanCreateForm";
+export { default as PlanUpdateForm } from "./PlanUpdateForm";
+export { default as ProfessionalCreateForm } from "./ProfessionalCreateForm";
+export { default as ProfessionalUpdateForm } from "./ProfessionalUpdateForm";
 export { default as studioTheme } from "./studioTheme";

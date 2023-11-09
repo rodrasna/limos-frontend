@@ -15,7 +15,7 @@
         "name" : "Query",
         "description" : null,
         "fields" : [ {
-          "name" : "getProfesional",
+          "name" : "getProfessional",
           "description" : null,
           "args" : [ {
             "name" : "id",
@@ -33,20 +33,20 @@
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Profesional",
+            "name" : "Professional",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "listProfesionals",
+          "name" : "listProfessionals",
           "description" : null,
           "args" : [ {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelProfesionalFilterInput",
+              "name" : "ModelProfessionalFilterInput",
               "ofType" : null
             },
             "defaultValue" : null
@@ -71,13 +71,13 @@
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "ModelProfesionalConnection",
+            "name" : "ModelProfessionalConnection",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "getDietas",
+          "name" : "getDiet",
           "description" : null,
           "args" : [ {
             "name" : "id",
@@ -95,20 +95,20 @@
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Dietas",
+            "name" : "Diet",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "listDietas",
+          "name" : "listDiets",
           "description" : null,
           "args" : [ {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelDietasFilterInput",
+              "name" : "ModelDietFilterInput",
               "ofType" : null
             },
             "defaultValue" : null
@@ -133,16 +133,16 @@
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "ModelDietasConnection",
+            "name" : "ModelDietConnection",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "getConsultas",
+          "name" : "dietsByClientID",
           "description" : null,
           "args" : [ {
-            "name" : "id",
+            "name" : "clientID",
             "description" : null,
             "type" : {
               "kind" : "NON_NULL",
@@ -154,23 +154,21 @@
               }
             },
             "defaultValue" : null
-          } ],
-          "type" : {
-            "kind" : "OBJECT",
-            "name" : "Consultas",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "listConsultas",
-          "description" : null,
-          "args" : [ {
+          }, {
+            "name" : "sortDirection",
+            "description" : null,
+            "type" : {
+              "kind" : "ENUM",
+              "name" : "ModelSortDirection",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelConsultasFilterInput",
+              "name" : "ModelDietFilterInput",
               "ofType" : null
             },
             "defaultValue" : null
@@ -195,7 +193,129 @@
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "ModelConsultasConnection",
+            "name" : "ModelDietConnection",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "getConsult",
+          "description" : null,
+          "args" : [ {
+            "name" : "id",
+            "description" : null,
+            "type" : {
+              "kind" : "NON_NULL",
+              "name" : null,
+              "ofType" : {
+                "kind" : "SCALAR",
+                "name" : "ID",
+                "ofType" : null
+              }
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "Consult",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "listConsults",
+          "description" : null,
+          "args" : [ {
+            "name" : "filter",
+            "description" : null,
+            "type" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelConsultFilterInput",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "limit",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "Int",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "nextToken",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "ModelConsultConnection",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "consultsByClientID",
+          "description" : null,
+          "args" : [ {
+            "name" : "clientID",
+            "description" : null,
+            "type" : {
+              "kind" : "NON_NULL",
+              "name" : null,
+              "ofType" : {
+                "kind" : "SCALAR",
+                "name" : "ID",
+                "ofType" : null
+              }
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "sortDirection",
+            "description" : null,
+            "type" : {
+              "kind" : "ENUM",
+              "name" : "ModelSortDirection",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "filter",
+            "description" : null,
+            "type" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelConsultFilterInput",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "limit",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "Int",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "nextToken",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "ModelConsultConnection",
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -263,127 +383,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "dietasByClienteID",
-          "description" : null,
-          "args" : [ {
-            "name" : "clienteID",
-            "description" : null,
-            "type" : {
-              "kind" : "NON_NULL",
-              "name" : null,
-              "ofType" : {
-                "kind" : "SCALAR",
-                "name" : "ID",
-                "ofType" : null
-              }
-            },
-            "defaultValue" : null
-          }, {
-            "name" : "sortDirection",
-            "description" : null,
-            "type" : {
-              "kind" : "ENUM",
-              "name" : "ModelSortDirection",
-              "ofType" : null
-            },
-            "defaultValue" : null
-          }, {
-            "name" : "filter",
-            "description" : null,
-            "type" : {
-              "kind" : "INPUT_OBJECT",
-              "name" : "ModelDietasFilterInput",
-              "ofType" : null
-            },
-            "defaultValue" : null
-          }, {
-            "name" : "limit",
-            "description" : null,
-            "type" : {
-              "kind" : "SCALAR",
-              "name" : "Int",
-              "ofType" : null
-            },
-            "defaultValue" : null
-          }, {
-            "name" : "nextToken",
-            "description" : null,
-            "type" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            },
-            "defaultValue" : null
-          } ],
-          "type" : {
-            "kind" : "OBJECT",
-            "name" : "ModelDietasConnection",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "consultasByClienteID",
-          "description" : null,
-          "args" : [ {
-            "name" : "clienteID",
-            "description" : null,
-            "type" : {
-              "kind" : "NON_NULL",
-              "name" : null,
-              "ofType" : {
-                "kind" : "SCALAR",
-                "name" : "ID",
-                "ofType" : null
-              }
-            },
-            "defaultValue" : null
-          }, {
-            "name" : "sortDirection",
-            "description" : null,
-            "type" : {
-              "kind" : "ENUM",
-              "name" : "ModelSortDirection",
-              "ofType" : null
-            },
-            "defaultValue" : null
-          }, {
-            "name" : "filter",
-            "description" : null,
-            "type" : {
-              "kind" : "INPUT_OBJECT",
-              "name" : "ModelConsultasFilterInput",
-              "ofType" : null
-            },
-            "defaultValue" : null
-          }, {
-            "name" : "limit",
-            "description" : null,
-            "type" : {
-              "kind" : "SCALAR",
-              "name" : "Int",
-              "ofType" : null
-            },
-            "defaultValue" : null
-          }, {
-            "name" : "nextToken",
-            "description" : null,
-            "type" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            },
-            "defaultValue" : null
-          } ],
-          "type" : {
-            "kind" : "OBJECT",
-            "name" : "ModelConsultasConnection",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "getCliente",
+          "name" : "getClient",
           "description" : null,
           "args" : [ {
             "name" : "id",
@@ -401,20 +401,20 @@
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Cliente",
+            "name" : "Client",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "listClientes",
+          "name" : "listClients",
           "description" : null,
           "args" : [ {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelClienteFilterInput",
+              "name" : "ModelClientFilterInput",
               "ofType" : null
             },
             "defaultValue" : null
@@ -439,7 +439,7 @@
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "ModelClienteConnection",
+            "name" : "ModelClientConnection",
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -451,7 +451,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "OBJECT",
-        "name" : "Profesional",
+        "name" : "Professional",
         "description" : null,
         "fields" : [ {
           "name" : "id",
@@ -469,7 +469,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "nombre",
+          "name" : "firstName",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -480,7 +480,18 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "apellido",
+          "name" : "lastName",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "specialty",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -554,7 +565,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "OBJECT",
-        "name" : "ModelProfesionalConnection",
+        "name" : "ModelProfessionalConnection",
         "description" : null,
         "fields" : [ {
           "name" : "items",
@@ -568,7 +579,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "OBJECT",
-                "name" : "Profesional",
+                "name" : "Professional",
                 "ofType" : null
               }
             }
@@ -593,7 +604,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "ModelProfesionalFilterInput",
+        "name" : "ModelProfessionalFilterInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -606,7 +617,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "nombre",
+          "name" : "firstName",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -615,7 +626,16 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "apellido",
+          "name" : "lastName",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "specialty",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -631,7 +651,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelProfesionalFilterInput",
+              "name" : "ModelProfessionalFilterInput",
               "ofType" : null
             }
           },
@@ -644,7 +664,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelProfesionalFilterInput",
+              "name" : "ModelProfessionalFilterInput",
               "ofType" : null
             }
           },
@@ -654,7 +674,7 @@
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
-            "name" : "ModelProfesionalFilterInput",
+            "name" : "ModelProfessionalFilterInput",
             "ofType" : null
           },
           "defaultValue" : null
@@ -1077,7 +1097,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "OBJECT",
-        "name" : "Dietas",
+        "name" : "Diet",
         "description" : null,
         "fields" : [ {
           "name" : "id",
@@ -1095,7 +1115,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "clienteID",
+          "name" : "clientID",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -1110,7 +1130,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "cliente",
+          "name" : "client",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -1121,7 +1141,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "fechaEntrega",
+          "name" : "dateDelivery",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -1132,7 +1152,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "fechaConsulta",
+          "name" : "dateConsult",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -1143,7 +1163,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "tiempoRealizacion",
+          "name" : "timeRealization",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -1154,7 +1174,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "calorias",
+          "name" : "calories",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -1210,7 +1230,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "OBJECT",
-        "name" : "ModelDietasConnection",
+        "name" : "ModelDietConnection",
         "description" : null,
         "fields" : [ {
           "name" : "items",
@@ -1224,7 +1244,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "OBJECT",
-                "name" : "Dietas",
+                "name" : "Diet",
                 "ofType" : null
               }
             }
@@ -1249,7 +1269,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "ModelDietasFilterInput",
+        "name" : "ModelDietFilterInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -1262,7 +1282,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "clienteID",
+          "name" : "clientID",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1271,7 +1291,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "cliente",
+          "name" : "client",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1280,7 +1300,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "fechaEntrega",
+          "name" : "dateDelivery",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1289,7 +1309,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "fechaConsulta",
+          "name" : "dateConsult",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1298,7 +1318,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "tiempoRealizacion",
+          "name" : "timeRealization",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1307,7 +1327,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "calorias",
+          "name" : "calories",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1323,7 +1343,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelDietasFilterInput",
+              "name" : "ModelDietFilterInput",
               "ofType" : null
             }
           },
@@ -1336,7 +1356,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelDietasFilterInput",
+              "name" : "ModelDietFilterInput",
               "ofType" : null
             }
           },
@@ -1346,7 +1366,7 @@
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
-            "name" : "ModelDietasFilterInput",
+            "name" : "ModelDietFilterInput",
             "ofType" : null
           },
           "defaultValue" : null
@@ -1449,8 +1469,27 @@
         "enumValues" : null,
         "possibleTypes" : null
       }, {
+        "kind" : "ENUM",
+        "name" : "ModelSortDirection",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : null,
+        "interfaces" : null,
+        "enumValues" : [ {
+          "name" : "ASC",
+          "description" : null,
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "DESC",
+          "description" : null,
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        } ],
+        "possibleTypes" : null
+      }, {
         "kind" : "OBJECT",
-        "name" : "Consultas",
+        "name" : "Consult",
         "description" : null,
         "fields" : [ {
           "name" : "id",
@@ -1468,7 +1507,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "cliente",
+          "name" : "client",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -1479,7 +1518,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "seguimiento",
+          "name" : "Alternativas",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -1490,7 +1529,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "fecha",
+          "name" : "date",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -1501,7 +1540,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "lugar",
+          "name" : "place",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -1512,7 +1551,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "aceptada",
+          "name" : "accept",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -1523,7 +1562,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "clienteID",
+          "name" : "clientID",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -1534,6 +1573,17 @@
               "name" : "ID",
               "ofType" : null
             }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "Client",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "Client",
+            "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
@@ -1574,29 +1624,25 @@
         "possibleTypes" : null
       }, {
         "kind" : "OBJECT",
-        "name" : "ModelConsultasConnection",
+        "name" : "Client",
         "description" : null,
         "fields" : [ {
-          "name" : "items",
+          "name" : "id",
           "description" : null,
           "args" : [ ],
           "type" : {
             "kind" : "NON_NULL",
             "name" : null,
             "ofType" : {
-              "kind" : "LIST",
-              "name" : null,
-              "ofType" : {
-                "kind" : "OBJECT",
-                "name" : "Consultas",
-                "ofType" : null
-              }
+              "kind" : "SCALAR",
+              "name" : "ID",
+              "ofType" : null
             }
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "nextToken",
+          "name" : "firstName",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -1606,161 +1652,254 @@
           },
           "isDeprecated" : false,
           "deprecationReason" : null
+        }, {
+          "name" : "lastName",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "lastConsult",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "AWSDate",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "professional",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "Plan",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "Plan",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "email",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "AWSEmail",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "phoneNumber",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "AWSPhone",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "assignedProfessional",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "Professional",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "Diets",
+          "description" : null,
+          "args" : [ {
+            "name" : "filter",
+            "description" : null,
+            "type" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelConsultFilterInput",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "sortDirection",
+            "description" : null,
+            "type" : {
+              "kind" : "ENUM",
+              "name" : "ModelSortDirection",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "limit",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "Int",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "nextToken",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "ModelConsultConnection",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "Consults",
+          "description" : null,
+          "args" : [ {
+            "name" : "filter",
+            "description" : null,
+            "type" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelConsultFilterInput",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "sortDirection",
+            "description" : null,
+            "type" : {
+              "kind" : "ENUM",
+              "name" : "ModelSortDirection",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "limit",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "Int",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "nextToken",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "ModelConsultConnection",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "weight",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Float",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "place",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "createdAt",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "AWSDateTime",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "updatedAt",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "AWSDateTime",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "clientPlanId",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "ID",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "clientAssignedProfessionalId",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "ID",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
         } ],
         "inputFields" : null,
         "interfaces" : [ ],
-        "enumValues" : null,
-        "possibleTypes" : null
-      }, {
-        "kind" : "INPUT_OBJECT",
-        "name" : "ModelConsultasFilterInput",
-        "description" : null,
-        "fields" : null,
-        "inputFields" : [ {
-          "name" : "id",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelIDInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "cliente",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelStringInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "seguimiento",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelStringInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "fecha",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelStringInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "lugar",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelStringInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "aceptada",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelBooleanInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "clienteID",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelIDInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "and",
-          "description" : null,
-          "type" : {
-            "kind" : "LIST",
-            "name" : null,
-            "ofType" : {
-              "kind" : "INPUT_OBJECT",
-              "name" : "ModelConsultasFilterInput",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "or",
-          "description" : null,
-          "type" : {
-            "kind" : "LIST",
-            "name" : null,
-            "ofType" : {
-              "kind" : "INPUT_OBJECT",
-              "name" : "ModelConsultasFilterInput",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "not",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelConsultasFilterInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        } ],
-        "interfaces" : null,
-        "enumValues" : null,
-        "possibleTypes" : null
-      }, {
-        "kind" : "INPUT_OBJECT",
-        "name" : "ModelBooleanInput",
-        "description" : null,
-        "fields" : null,
-        "inputFields" : [ {
-          "name" : "ne",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "eq",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "attributeExists",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "attributeType",
-          "description" : null,
-          "type" : {
-            "kind" : "ENUM",
-            "name" : "ModelAttributeTypes",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        } ],
-        "interfaces" : null,
         "enumValues" : null,
         "possibleTypes" : null
       }, {
@@ -1783,7 +1922,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "nombre",
+          "name" : "name",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -1794,7 +1933,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "precio",
+          "name" : "price",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -1845,6 +1984,215 @@
         "description" : "Built-in Float",
         "fields" : null,
         "inputFields" : null,
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "SCALAR",
+        "name" : "AWSEmail",
+        "description" : "The `AWSEmail` scalar type provided by AWS AppSync, represents an Email address string that complies with [RFC 822](https://www.ietf.org/rfc/rfc822.txt). For example, \"**username@example.com**\" is a valid Email address.",
+        "fields" : null,
+        "inputFields" : null,
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "SCALAR",
+        "name" : "AWSPhone",
+        "description" : "The `AWSPhone` scalar type provided by AWS AppSync, represents a valid Phone Number. Phone numbers are serialized and deserialized as Strings. Segments of the phone number may be whitespace delimited or hyphenated.  The number can specify a country code at the beginning. However, United States numbers without country codes are still considered to be valid.",
+        "fields" : null,
+        "inputFields" : null,
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "OBJECT",
+        "name" : "ModelConsultConnection",
+        "description" : null,
+        "fields" : [ {
+          "name" : "items",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "LIST",
+              "name" : null,
+              "ofType" : {
+                "kind" : "OBJECT",
+                "name" : "Consult",
+                "ofType" : null
+              }
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "nextToken",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        } ],
+        "inputFields" : null,
+        "interfaces" : [ ],
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "ModelConsultFilterInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "id",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelIDInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "client",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "Alternativas",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "date",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "place",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "accept",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelBooleanInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "clientID",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelIDInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "and",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelConsultFilterInput",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "or",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelConsultFilterInput",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "not",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelConsultFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "ModelBooleanInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "ne",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "eq",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "attributeExists",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "attributeType",
+          "description" : null,
+          "type" : {
+            "kind" : "ENUM",
+            "name" : "ModelAttributeTypes",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
         "interfaces" : null,
         "enumValues" : null,
         "possibleTypes" : null
@@ -1902,7 +2250,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "nombre",
+          "name" : "name",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1911,7 +2259,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "precio",
+          "name" : "price",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2053,314 +2401,8 @@
         "enumValues" : null,
         "possibleTypes" : null
       }, {
-        "kind" : "ENUM",
-        "name" : "ModelSortDirection",
-        "description" : null,
-        "fields" : null,
-        "inputFields" : null,
-        "interfaces" : null,
-        "enumValues" : [ {
-          "name" : "ASC",
-          "description" : null,
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "DESC",
-          "description" : null,
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        } ],
-        "possibleTypes" : null
-      }, {
         "kind" : "OBJECT",
-        "name" : "Cliente",
-        "description" : null,
-        "fields" : [ {
-          "name" : "id",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "ID",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "nombre",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "lugar",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "ultimaConsulta",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "AWSDate",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "profesional",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "Plan",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "OBJECT",
-            "name" : "Plan",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "email",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "AWSEmail",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "phoneNumber",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "AWSPhone",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "NutriAsignado",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "OBJECT",
-            "name" : "Profesional",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "Dietas",
-          "description" : null,
-          "args" : [ {
-            "name" : "filter",
-            "description" : null,
-            "type" : {
-              "kind" : "INPUT_OBJECT",
-              "name" : "ModelDietasFilterInput",
-              "ofType" : null
-            },
-            "defaultValue" : null
-          }, {
-            "name" : "sortDirection",
-            "description" : null,
-            "type" : {
-              "kind" : "ENUM",
-              "name" : "ModelSortDirection",
-              "ofType" : null
-            },
-            "defaultValue" : null
-          }, {
-            "name" : "limit",
-            "description" : null,
-            "type" : {
-              "kind" : "SCALAR",
-              "name" : "Int",
-              "ofType" : null
-            },
-            "defaultValue" : null
-          }, {
-            "name" : "nextToken",
-            "description" : null,
-            "type" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            },
-            "defaultValue" : null
-          } ],
-          "type" : {
-            "kind" : "OBJECT",
-            "name" : "ModelDietasConnection",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "Consultas",
-          "description" : null,
-          "args" : [ {
-            "name" : "filter",
-            "description" : null,
-            "type" : {
-              "kind" : "INPUT_OBJECT",
-              "name" : "ModelConsultasFilterInput",
-              "ofType" : null
-            },
-            "defaultValue" : null
-          }, {
-            "name" : "sortDirection",
-            "description" : null,
-            "type" : {
-              "kind" : "ENUM",
-              "name" : "ModelSortDirection",
-              "ofType" : null
-            },
-            "defaultValue" : null
-          }, {
-            "name" : "limit",
-            "description" : null,
-            "type" : {
-              "kind" : "SCALAR",
-              "name" : "Int",
-              "ofType" : null
-            },
-            "defaultValue" : null
-          }, {
-            "name" : "nextToken",
-            "description" : null,
-            "type" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            },
-            "defaultValue" : null
-          } ],
-          "type" : {
-            "kind" : "OBJECT",
-            "name" : "ModelConsultasConnection",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "peso",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Float",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "createdAt",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "AWSDateTime",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "updatedAt",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "AWSDateTime",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "clientePlanId",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "ID",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "clienteNutriAsignadoId",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "ID",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        } ],
-        "inputFields" : null,
-        "interfaces" : [ ],
-        "enumValues" : null,
-        "possibleTypes" : null
-      }, {
-        "kind" : "SCALAR",
-        "name" : "AWSEmail",
-        "description" : "The `AWSEmail` scalar type provided by AWS AppSync, represents an Email address string that complies with [RFC 822](https://www.ietf.org/rfc/rfc822.txt). For example, \"**username@example.com**\" is a valid Email address.",
-        "fields" : null,
-        "inputFields" : null,
-        "interfaces" : null,
-        "enumValues" : null,
-        "possibleTypes" : null
-      }, {
-        "kind" : "SCALAR",
-        "name" : "AWSPhone",
-        "description" : "The `AWSPhone` scalar type provided by AWS AppSync, represents a valid Phone Number. Phone numbers are serialized and deserialized as Strings. Segments of the phone number may be whitespace delimited or hyphenated.  The number can specify a country code at the beginning. However, United States numbers without country codes are still considered to be valid.",
-        "fields" : null,
-        "inputFields" : null,
-        "interfaces" : null,
-        "enumValues" : null,
-        "possibleTypes" : null
-      }, {
-        "kind" : "OBJECT",
-        "name" : "ModelClienteConnection",
+        "name" : "ModelClientConnection",
         "description" : null,
         "fields" : [ {
           "name" : "items",
@@ -2374,7 +2416,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "OBJECT",
-                "name" : "Cliente",
+                "name" : "Client",
                 "ofType" : null
               }
             }
@@ -2399,7 +2441,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "ModelClienteFilterInput",
+        "name" : "ModelClientFilterInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -2412,7 +2454,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "nombre",
+          "name" : "firstName",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2421,7 +2463,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "lugar",
+          "name" : "lastName",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2430,7 +2472,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "ultimaConsulta",
+          "name" : "lastConsult",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2439,7 +2481,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "profesional",
+          "name" : "professional",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2466,11 +2508,20 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "peso",
+          "name" : "weight",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
             "name" : "ModelFloatInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "place",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
             "ofType" : null
           },
           "defaultValue" : null
@@ -2482,7 +2533,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelClienteFilterInput",
+              "name" : "ModelClientFilterInput",
               "ofType" : null
             }
           },
@@ -2495,7 +2546,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelClienteFilterInput",
+              "name" : "ModelClientFilterInput",
               "ofType" : null
             }
           },
@@ -2505,12 +2556,12 @@
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
-            "name" : "ModelClienteFilterInput",
+            "name" : "ModelClientFilterInput",
             "ofType" : null
           },
           "defaultValue" : null
         }, {
-          "name" : "clientePlanId",
+          "name" : "clientPlanId",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2519,7 +2570,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "clienteNutriAsignadoId",
+          "name" : "clientAssignedProfessionalId",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2536,7 +2587,7 @@
         "name" : "Mutation",
         "description" : null,
         "fields" : [ {
-          "name" : "createProfesional",
+          "name" : "createProfessional",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -2546,7 +2597,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "CreateProfesionalInput",
+                "name" : "CreateProfessionalInput",
                 "ofType" : null
               }
             },
@@ -2556,20 +2607,20 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelProfesionalConditionInput",
+              "name" : "ModelProfessionalConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Profesional",
+            "name" : "Professional",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "updateProfesional",
+          "name" : "updateProfessional",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -2579,7 +2630,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "UpdateProfesionalInput",
+                "name" : "UpdateProfessionalInput",
                 "ofType" : null
               }
             },
@@ -2589,20 +2640,20 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelProfesionalConditionInput",
+              "name" : "ModelProfessionalConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Profesional",
+            "name" : "Professional",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "deleteProfesional",
+          "name" : "deleteProfessional",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -2612,7 +2663,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "DeleteProfesionalInput",
+                "name" : "DeleteProfessionalInput",
                 "ofType" : null
               }
             },
@@ -2622,20 +2673,20 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelProfesionalConditionInput",
+              "name" : "ModelProfessionalConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Profesional",
+            "name" : "Professional",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "createDietas",
+          "name" : "createDiet",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -2645,7 +2696,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "CreateDietasInput",
+                "name" : "CreateDietInput",
                 "ofType" : null
               }
             },
@@ -2655,20 +2706,20 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelDietasConditionInput",
+              "name" : "ModelDietConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Dietas",
+            "name" : "Diet",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "updateDietas",
+          "name" : "updateDiet",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -2678,7 +2729,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "UpdateDietasInput",
+                "name" : "UpdateDietInput",
                 "ofType" : null
               }
             },
@@ -2688,20 +2739,20 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelDietasConditionInput",
+              "name" : "ModelDietConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Dietas",
+            "name" : "Diet",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "deleteDietas",
+          "name" : "deleteDiet",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -2711,7 +2762,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "DeleteDietasInput",
+                "name" : "DeleteDietInput",
                 "ofType" : null
               }
             },
@@ -2721,20 +2772,20 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelDietasConditionInput",
+              "name" : "ModelDietConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Dietas",
+            "name" : "Diet",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "createConsultas",
+          "name" : "createConsult",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -2744,7 +2795,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "CreateConsultasInput",
+                "name" : "CreateConsultInput",
                 "ofType" : null
               }
             },
@@ -2754,20 +2805,20 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelConsultasConditionInput",
+              "name" : "ModelConsultConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Consultas",
+            "name" : "Consult",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "updateConsultas",
+          "name" : "updateConsult",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -2777,7 +2828,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "UpdateConsultasInput",
+                "name" : "UpdateConsultInput",
                 "ofType" : null
               }
             },
@@ -2787,20 +2838,20 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelConsultasConditionInput",
+              "name" : "ModelConsultConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Consultas",
+            "name" : "Consult",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "deleteConsultas",
+          "name" : "deleteConsult",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -2810,7 +2861,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "DeleteConsultasInput",
+                "name" : "DeleteConsultInput",
                 "ofType" : null
               }
             },
@@ -2820,14 +2871,14 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelConsultasConditionInput",
+              "name" : "ModelConsultConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Consultas",
+            "name" : "Consult",
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -2932,7 +2983,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "createCliente",
+          "name" : "createClient",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -2942,7 +2993,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "CreateClienteInput",
+                "name" : "CreateClientInput",
                 "ofType" : null
               }
             },
@@ -2952,20 +3003,20 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelClienteConditionInput",
+              "name" : "ModelClientConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Cliente",
+            "name" : "Client",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "updateCliente",
+          "name" : "updateClient",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -2975,7 +3026,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "UpdateClienteInput",
+                "name" : "UpdateClientInput",
                 "ofType" : null
               }
             },
@@ -2985,20 +3036,20 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelClienteConditionInput",
+              "name" : "ModelClientConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Cliente",
+            "name" : "Client",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "deleteCliente",
+          "name" : "deleteClient",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -3008,7 +3059,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "DeleteClienteInput",
+                "name" : "DeleteClientInput",
                 "ofType" : null
               }
             },
@@ -3018,14 +3069,14 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelClienteConditionInput",
+              "name" : "ModelClientConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Cliente",
+            "name" : "Client",
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -3037,7 +3088,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "CreateProfesionalInput",
+        "name" : "CreateProfessionalInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -3050,7 +3101,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "nombre",
+          "name" : "firstName",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3059,7 +3110,16 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "apellido",
+          "name" : "lastName",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "specialty",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3073,11 +3133,11 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "ModelProfesionalConditionInput",
+        "name" : "ModelProfessionalConditionInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
-          "name" : "nombre",
+          "name" : "firstName",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -3086,7 +3146,16 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "apellido",
+          "name" : "lastName",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "specialty",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -3102,7 +3171,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelProfesionalConditionInput",
+              "name" : "ModelProfessionalConditionInput",
               "ofType" : null
             }
           },
@@ -3115,7 +3184,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelProfesionalConditionInput",
+              "name" : "ModelProfessionalConditionInput",
               "ofType" : null
             }
           },
@@ -3125,7 +3194,7 @@
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
-            "name" : "ModelProfesionalConditionInput",
+            "name" : "ModelProfessionalConditionInput",
             "ofType" : null
           },
           "defaultValue" : null
@@ -3135,7 +3204,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "UpdateProfesionalInput",
+        "name" : "UpdateProfessionalInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -3152,7 +3221,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "nombre",
+          "name" : "firstName",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3161,7 +3230,16 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "apellido",
+          "name" : "lastName",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "specialty",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3175,7 +3253,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "DeleteProfesionalInput",
+        "name" : "DeleteProfessionalInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -3197,7 +3275,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "CreateDietasInput",
+        "name" : "CreateDietInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -3210,7 +3288,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "clienteID",
+          "name" : "clientID",
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
@@ -3223,7 +3301,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "cliente",
+          "name" : "client",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3232,7 +3310,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "fechaEntrega",
+          "name" : "dateDelivery",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3241,7 +3319,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "fechaConsulta",
+          "name" : "dateConsult",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3250,7 +3328,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "tiempoRealizacion",
+          "name" : "timeRealization",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3259,7 +3337,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "calorias",
+          "name" : "calories",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3273,11 +3351,11 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "ModelDietasConditionInput",
+        "name" : "ModelDietConditionInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
-          "name" : "clienteID",
+          "name" : "clientID",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -3286,7 +3364,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "cliente",
+          "name" : "client",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -3295,7 +3373,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "fechaEntrega",
+          "name" : "dateDelivery",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -3304,7 +3382,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "fechaConsulta",
+          "name" : "dateConsult",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -3313,7 +3391,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "tiempoRealizacion",
+          "name" : "timeRealization",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -3322,7 +3400,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "calorias",
+          "name" : "calories",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -3338,7 +3416,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelDietasConditionInput",
+              "name" : "ModelDietConditionInput",
               "ofType" : null
             }
           },
@@ -3351,7 +3429,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelDietasConditionInput",
+              "name" : "ModelDietConditionInput",
               "ofType" : null
             }
           },
@@ -3361,7 +3439,7 @@
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
-            "name" : "ModelDietasConditionInput",
+            "name" : "ModelDietConditionInput",
             "ofType" : null
           },
           "defaultValue" : null
@@ -3371,7 +3449,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "UpdateDietasInput",
+        "name" : "UpdateDietInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -3388,7 +3466,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "clienteID",
+          "name" : "clientID",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3397,7 +3475,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "cliente",
+          "name" : "client",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3406,7 +3484,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "fechaEntrega",
+          "name" : "dateDelivery",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3415,7 +3493,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "fechaConsulta",
+          "name" : "dateConsult",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3424,7 +3502,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "tiempoRealizacion",
+          "name" : "timeRealization",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3433,7 +3511,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "calorias",
+          "name" : "calories",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3447,7 +3525,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "DeleteDietasInput",
+        "name" : "DeleteDietInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -3469,7 +3547,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "CreateConsultasInput",
+        "name" : "CreateConsultInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -3482,7 +3560,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "cliente",
+          "name" : "client",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3491,7 +3569,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "seguimiento",
+          "name" : "Alternativas",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3500,7 +3578,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "fecha",
+          "name" : "date",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3509,7 +3587,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "lugar",
+          "name" : "place",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3518,7 +3596,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "aceptada",
+          "name" : "accept",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3527,7 +3605,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "clienteID",
+          "name" : "clientID",
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
@@ -3545,11 +3623,11 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "ModelConsultasConditionInput",
+        "name" : "ModelConsultConditionInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
-          "name" : "cliente",
+          "name" : "client",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -3558,7 +3636,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "seguimiento",
+          "name" : "Alternativas",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -3567,7 +3645,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "fecha",
+          "name" : "date",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -3576,7 +3654,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "lugar",
+          "name" : "place",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -3585,7 +3663,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "aceptada",
+          "name" : "accept",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -3594,7 +3672,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "clienteID",
+          "name" : "clientID",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -3610,7 +3688,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelConsultasConditionInput",
+              "name" : "ModelConsultConditionInput",
               "ofType" : null
             }
           },
@@ -3623,7 +3701,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelConsultasConditionInput",
+              "name" : "ModelConsultConditionInput",
               "ofType" : null
             }
           },
@@ -3633,7 +3711,7 @@
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
-            "name" : "ModelConsultasConditionInput",
+            "name" : "ModelConsultConditionInput",
             "ofType" : null
           },
           "defaultValue" : null
@@ -3643,7 +3721,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "UpdateConsultasInput",
+        "name" : "UpdateConsultInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -3660,7 +3738,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "cliente",
+          "name" : "client",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3669,7 +3747,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "seguimiento",
+          "name" : "Alternativas",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3678,7 +3756,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "fecha",
+          "name" : "date",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3687,7 +3765,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "lugar",
+          "name" : "place",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3696,7 +3774,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "aceptada",
+          "name" : "accept",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3705,7 +3783,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "clienteID",
+          "name" : "clientID",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3719,7 +3797,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "DeleteConsultasInput",
+        "name" : "DeleteConsultInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -3754,7 +3832,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "nombre",
+          "name" : "name",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3763,7 +3841,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "precio",
+          "name" : "price",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3781,7 +3859,7 @@
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
-          "name" : "nombre",
+          "name" : "name",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -3790,7 +3868,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "precio",
+          "name" : "price",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -3856,7 +3934,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "nombre",
+          "name" : "name",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3865,7 +3943,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "precio",
+          "name" : "price",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3901,7 +3979,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "CreateClienteInput",
+        "name" : "CreateClientInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -3914,7 +3992,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "nombre",
+          "name" : "firstName",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3923,7 +4001,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "lugar",
+          "name" : "lastName",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3932,7 +4010,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "ultimaConsulta",
+          "name" : "lastConsult",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3941,7 +4019,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "profesional",
+          "name" : "professional",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3968,7 +4046,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "peso",
+          "name" : "weight",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3977,7 +4055,16 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "clientePlanId",
+          "name" : "place",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "clientPlanId",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3986,7 +4073,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "clienteNutriAsignadoId",
+          "name" : "clientAssignedProfessionalId",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -4000,11 +4087,11 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "ModelClienteConditionInput",
+        "name" : "ModelClientConditionInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
-          "name" : "nombre",
+          "name" : "firstName",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -4013,7 +4100,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "lugar",
+          "name" : "lastName",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -4022,7 +4109,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "ultimaConsulta",
+          "name" : "lastConsult",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -4031,7 +4118,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "profesional",
+          "name" : "professional",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -4058,11 +4145,20 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "peso",
+          "name" : "weight",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
             "name" : "ModelFloatInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "place",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
             "ofType" : null
           },
           "defaultValue" : null
@@ -4074,7 +4170,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelClienteConditionInput",
+              "name" : "ModelClientConditionInput",
               "ofType" : null
             }
           },
@@ -4087,7 +4183,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelClienteConditionInput",
+              "name" : "ModelClientConditionInput",
               "ofType" : null
             }
           },
@@ -4097,12 +4193,12 @@
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
-            "name" : "ModelClienteConditionInput",
+            "name" : "ModelClientConditionInput",
             "ofType" : null
           },
           "defaultValue" : null
         }, {
-          "name" : "clientePlanId",
+          "name" : "clientPlanId",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -4111,7 +4207,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "clienteNutriAsignadoId",
+          "name" : "clientAssignedProfessionalId",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -4125,7 +4221,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "UpdateClienteInput",
+        "name" : "UpdateClientInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -4142,7 +4238,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "nombre",
+          "name" : "firstName",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -4151,7 +4247,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "lugar",
+          "name" : "lastName",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -4160,7 +4256,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "ultimaConsulta",
+          "name" : "lastConsult",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -4169,7 +4265,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "profesional",
+          "name" : "professional",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -4196,7 +4292,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "peso",
+          "name" : "weight",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -4205,7 +4301,16 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "clientePlanId",
+          "name" : "place",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "clientPlanId",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -4214,7 +4319,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "clienteNutriAsignadoId",
+          "name" : "clientAssignedProfessionalId",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -4228,7 +4333,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "DeleteClienteInput",
+        "name" : "DeleteClientInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -4253,181 +4358,181 @@
         "name" : "Subscription",
         "description" : null,
         "fields" : [ {
-          "name" : "onCreateProfesional",
+          "name" : "onCreateProfessional",
           "description" : null,
           "args" : [ {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelSubscriptionProfesionalFilterInput",
+              "name" : "ModelSubscriptionProfessionalFilterInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Profesional",
+            "name" : "Professional",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "onUpdateProfesional",
+          "name" : "onUpdateProfessional",
           "description" : null,
           "args" : [ {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelSubscriptionProfesionalFilterInput",
+              "name" : "ModelSubscriptionProfessionalFilterInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Profesional",
+            "name" : "Professional",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "onDeleteProfesional",
+          "name" : "onDeleteProfessional",
           "description" : null,
           "args" : [ {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelSubscriptionProfesionalFilterInput",
+              "name" : "ModelSubscriptionProfessionalFilterInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Profesional",
+            "name" : "Professional",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "onCreateDietas",
+          "name" : "onCreateDiet",
           "description" : null,
           "args" : [ {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelSubscriptionDietasFilterInput",
+              "name" : "ModelSubscriptionDietFilterInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Dietas",
+            "name" : "Diet",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "onUpdateDietas",
+          "name" : "onUpdateDiet",
           "description" : null,
           "args" : [ {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelSubscriptionDietasFilterInput",
+              "name" : "ModelSubscriptionDietFilterInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Dietas",
+            "name" : "Diet",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "onDeleteDietas",
+          "name" : "onDeleteDiet",
           "description" : null,
           "args" : [ {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelSubscriptionDietasFilterInput",
+              "name" : "ModelSubscriptionDietFilterInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Dietas",
+            "name" : "Diet",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "onCreateConsultas",
+          "name" : "onCreateConsult",
           "description" : null,
           "args" : [ {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelSubscriptionConsultasFilterInput",
+              "name" : "ModelSubscriptionConsultFilterInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Consultas",
+            "name" : "Consult",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "onUpdateConsultas",
+          "name" : "onUpdateConsult",
           "description" : null,
           "args" : [ {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelSubscriptionConsultasFilterInput",
+              "name" : "ModelSubscriptionConsultFilterInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Consultas",
+            "name" : "Consult",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "onDeleteConsultas",
+          "name" : "onDeleteConsult",
           "description" : null,
           "args" : [ {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelSubscriptionConsultasFilterInput",
+              "name" : "ModelSubscriptionConsultFilterInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Consultas",
+            "name" : "Consult",
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -4493,61 +4598,61 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "onCreateCliente",
+          "name" : "onCreateClient",
           "description" : null,
           "args" : [ {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelSubscriptionClienteFilterInput",
+              "name" : "ModelSubscriptionClientFilterInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Cliente",
+            "name" : "Client",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "onUpdateCliente",
+          "name" : "onUpdateClient",
           "description" : null,
           "args" : [ {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelSubscriptionClienteFilterInput",
+              "name" : "ModelSubscriptionClientFilterInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Cliente",
+            "name" : "Client",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "onDeleteCliente",
+          "name" : "onDeleteClient",
           "description" : null,
           "args" : [ {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelSubscriptionClienteFilterInput",
+              "name" : "ModelSubscriptionClientFilterInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Cliente",
+            "name" : "Client",
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -4559,7 +4664,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "ModelSubscriptionProfesionalFilterInput",
+        "name" : "ModelSubscriptionProfessionalFilterInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -4572,7 +4677,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "nombre",
+          "name" : "firstName",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -4581,7 +4686,16 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "apellido",
+          "name" : "lastName",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelSubscriptionStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "specialty",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -4597,7 +4711,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelSubscriptionProfesionalFilterInput",
+              "name" : "ModelSubscriptionProfessionalFilterInput",
               "ofType" : null
             }
           },
@@ -4610,7 +4724,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelSubscriptionProfesionalFilterInput",
+              "name" : "ModelSubscriptionProfessionalFilterInput",
               "ofType" : null
             }
           },
@@ -4879,7 +4993,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "ModelSubscriptionDietasFilterInput",
+        "name" : "ModelSubscriptionDietFilterInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -4892,7 +5006,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "clienteID",
+          "name" : "clientID",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -4901,7 +5015,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "cliente",
+          "name" : "client",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -4910,7 +5024,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "fechaEntrega",
+          "name" : "dateDelivery",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -4919,7 +5033,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "fechaConsulta",
+          "name" : "dateConsult",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -4928,7 +5042,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "tiempoRealizacion",
+          "name" : "timeRealization",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -4937,7 +5051,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "calorias",
+          "name" : "calories",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -4953,7 +5067,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelSubscriptionDietasFilterInput",
+              "name" : "ModelSubscriptionDietFilterInput",
               "ofType" : null
             }
           },
@@ -4966,7 +5080,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelSubscriptionDietasFilterInput",
+              "name" : "ModelSubscriptionDietFilterInput",
               "ofType" : null
             }
           },
@@ -5079,7 +5193,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "ModelSubscriptionConsultasFilterInput",
+        "name" : "ModelSubscriptionConsultFilterInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -5092,7 +5206,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "cliente",
+          "name" : "client",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -5101,7 +5215,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "seguimiento",
+          "name" : "Alternativas",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -5110,7 +5224,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "fecha",
+          "name" : "date",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -5119,7 +5233,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "lugar",
+          "name" : "place",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -5128,7 +5242,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "aceptada",
+          "name" : "accept",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -5137,7 +5251,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "clienteID",
+          "name" : "clientID",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -5153,7 +5267,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelSubscriptionConsultasFilterInput",
+              "name" : "ModelSubscriptionConsultFilterInput",
               "ofType" : null
             }
           },
@@ -5166,7 +5280,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelSubscriptionConsultasFilterInput",
+              "name" : "ModelSubscriptionConsultFilterInput",
               "ofType" : null
             }
           },
@@ -5217,7 +5331,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "nombre",
+          "name" : "name",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -5226,7 +5340,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "precio",
+          "name" : "price",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -5368,7 +5482,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "ModelSubscriptionClienteFilterInput",
+        "name" : "ModelSubscriptionClientFilterInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -5381,7 +5495,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "nombre",
+          "name" : "firstName",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -5390,7 +5504,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "lugar",
+          "name" : "lastName",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -5399,7 +5513,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "ultimaConsulta",
+          "name" : "lastConsult",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -5408,7 +5522,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "profesional",
+          "name" : "professional",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -5435,11 +5549,20 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "peso",
+          "name" : "weight",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
             "name" : "ModelSubscriptionFloatInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "place",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelSubscriptionStringInput",
             "ofType" : null
           },
           "defaultValue" : null
@@ -5451,7 +5574,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelSubscriptionClienteFilterInput",
+              "name" : "ModelSubscriptionClientFilterInput",
               "ofType" : null
             }
           },
@@ -5464,7 +5587,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelSubscriptionClienteFilterInput",
+              "name" : "ModelSubscriptionClientFilterInput",
               "ofType" : null
             }
           },
@@ -6257,6 +6380,72 @@
         "onFragment" : false,
         "onField" : true
       }, {
+        "name" : "aws_iam",
+        "description" : "Tells the service this field/object has access authorized by sigv4 signing.",
+        "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
+        "args" : [ ],
+        "onOperation" : false,
+        "onFragment" : false,
+        "onField" : false
+      }, {
+        "name" : "aws_auth",
+        "description" : "Directs the schema to enforce authorization on a field",
+        "locations" : [ "FIELD_DEFINITION" ],
+        "args" : [ {
+          "name" : "cognito_groups",
+          "description" : "List of cognito user pool groups which have access on this field",
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        } ],
+        "onOperation" : false,
+        "onFragment" : false,
+        "onField" : false
+      }, {
+        "name" : "aws_cognito_user_pools",
+        "description" : "Tells the service this field/object has access authorized by a Cognito User Pools token.",
+        "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
+        "args" : [ {
+          "name" : "cognito_groups",
+          "description" : "List of cognito user pool groups which have access on this field",
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        } ],
+        "onOperation" : false,
+        "onFragment" : false,
+        "onField" : false
+      }, {
+        "name" : "aws_lambda",
+        "description" : "Tells the service this field/object has access authorized by a Lambda Authorizer.",
+        "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
+        "args" : [ ],
+        "onOperation" : false,
+        "onFragment" : false,
+        "onField" : false
+      }, {
+        "name" : "aws_oidc",
+        "description" : "Tells the service this field/object has access authorized by an OIDC token.",
+        "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
+        "args" : [ ],
+        "onOperation" : false,
+        "onFragment" : false,
+        "onField" : false
+      }, {
         "name" : "deprecated",
         "description" : null,
         "locations" : [ "FIELD_DEFINITION", "ENUM_VALUE" ],
@@ -6295,22 +6484,6 @@
         "onFragment" : false,
         "onField" : false
       }, {
-        "name" : "aws_api_key",
-        "description" : "Tells the service this field/object has access authorized by an API key.",
-        "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
-        "args" : [ ],
-        "onOperation" : false,
-        "onFragment" : false,
-        "onField" : false
-      }, {
-        "name" : "aws_iam",
-        "description" : "Tells the service this field/object has access authorized by sigv4 signing.",
-        "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
-        "args" : [ ],
-        "onOperation" : false,
-        "onFragment" : false,
-        "onField" : false
-      }, {
         "name" : "aws_subscribe",
         "description" : "Tells the service which mutation triggers this subscription.",
         "locations" : [ "FIELD_DEFINITION" ],
@@ -6332,58 +6505,8 @@
         "onFragment" : false,
         "onField" : false
       }, {
-        "name" : "aws_cognito_user_pools",
-        "description" : "Tells the service this field/object has access authorized by a Cognito TeamMember Pools token.",
-        "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
-        "args" : [ {
-          "name" : "cognito_groups",
-          "description" : "List of cognito user pool groups which have access on this field",
-          "type" : {
-            "kind" : "LIST",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        } ],
-        "onOperation" : false,
-        "onFragment" : false,
-        "onField" : false
-      }, {
-        "name" : "aws_auth",
-        "description" : "Directs the schema to enforce authorization on a field",
-        "locations" : [ "FIELD_DEFINITION" ],
-        "args" : [ {
-          "name" : "cognito_groups",
-          "description" : "List of cognito user pool groups which have access on this field",
-          "type" : {
-            "kind" : "LIST",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        } ],
-        "onOperation" : false,
-        "onFragment" : false,
-        "onField" : false
-      }, {
-        "name" : "aws_lambda",
-        "description" : "Tells the service this field/object has access authorized by a Lambda Authorizer.",
-        "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
-        "args" : [ ],
-        "onOperation" : false,
-        "onFragment" : false,
-        "onField" : false
-      }, {
-        "name" : "aws_oidc",
-        "description" : "Tells the service this field/object has access authorized by an OIDC token.",
+        "name" : "aws_api_key",
+        "description" : "Tells the service this field/object has access authorized by an API key.",
         "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
         "args" : [ ],
         "onOperation" : false,

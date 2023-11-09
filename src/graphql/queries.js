@@ -1,106 +1,197 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getProfesional = /* GraphQL */ `
-  query GetProfesional($id: ID!) {
-    getProfesional(id: $id) {
+export const getProfessional = /* GraphQL */ `
+  query GetProfessional($id: ID!) {
+    getProfessional(id: $id) {
       id
-      nombre
-      apellido
+      firstName
+      lastName
+      specialty
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
-export const listProfesionals = /* GraphQL */ `
-  query ListProfesionals(
-    $filter: ModelProfesionalFilterInput
+export const listProfessionals = /* GraphQL */ `
+  query ListProfessionals(
+    $filter: ModelProfessionalFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listProfesionals(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listProfessionals(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        nombre
-        apellido
+        firstName
+        lastName
+        specialty
         createdAt
         updatedAt
+        __typename
       }
       nextToken
+      __typename
     }
   }
 `;
-export const getDietas = /* GraphQL */ `
-  query GetDietas($id: ID!) {
-    getDietas(id: $id) {
+export const getDiet = /* GraphQL */ `
+  query GetDiet($id: ID!) {
+    getDiet(id: $id) {
       id
-      clienteID
-      cliente
-      fechaEntrega
-      fechaConsulta
-      tiempoRealizacion
-      calorias
+      clientID
+      client
+      dateDelivery
+      dateConsult
+      timeRealization
+      calories
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
-export const listDietas = /* GraphQL */ `
-  query ListDietas(
-    $filter: ModelDietasFilterInput
+export const listDiets = /* GraphQL */ `
+  query ListDiets(
+    $filter: ModelDietFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listDietas(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listDiets(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        clienteID
-        cliente
-        fechaEntrega
-        fechaConsulta
-        tiempoRealizacion
-        calorias
+        clientID
+        client
+        dateDelivery
+        dateConsult
+        timeRealization
+        calories
         createdAt
         updatedAt
+        __typename
       }
       nextToken
+      __typename
     }
   }
 `;
-export const getConsultas = /* GraphQL */ `
-  query GetConsultas($id: ID!) {
-    getConsultas(id: $id) {
-      id
-      cliente
-      seguimiento
-      fecha
-      lugar
-      aceptada
-      clienteID
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listConsultas = /* GraphQL */ `
-  query ListConsultas(
-    $filter: ModelConsultasFilterInput
+export const dietsByClientID = /* GraphQL */ `
+  query DietsByClientID(
+    $clientID: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelDietFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listConsultas(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    dietsByClientID(
+      clientID: $clientID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
       items {
         id
-        cliente
-        seguimiento
-        fecha
-        lugar
-        aceptada
-        clienteID
+        clientID
+        client
+        dateDelivery
+        dateConsult
+        timeRealization
+        calories
         createdAt
         updatedAt
+        __typename
       }
       nextToken
+      __typename
+    }
+  }
+`;
+export const getConsult = /* GraphQL */ `
+  query GetConsult($id: ID!) {
+    getConsult(id: $id) {
+      id
+      client
+      Alternativas
+      date
+      place
+      accept
+      clientID
+      Client {
+        id
+        firstName
+        lastName
+        lastConsult
+        professional
+        email
+        phoneNumber
+        weight
+        place
+        createdAt
+        updatedAt
+        clientPlanId
+        clientAssignedProfessionalId
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listConsults = /* GraphQL */ `
+  query ListConsults(
+    $filter: ModelConsultFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listConsults(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        client
+        Alternativas
+        date
+        place
+        accept
+        clientID
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
+export const consultsByClientID = /* GraphQL */ `
+  query ConsultsByClientID(
+    $clientID: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelConsultFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    consultsByClientID(
+      clientID: $clientID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        client
+        Alternativas
+        date
+        place
+        accept
+        clientID
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
     }
   }
 `;
@@ -108,10 +199,11 @@ export const getPlan = /* GraphQL */ `
   query GetPlan($id: ID!) {
     getPlan(id: $id) {
       id
-      nombre
-      precio
+      name
+      price
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
@@ -124,177 +216,87 @@ export const listPlans = /* GraphQL */ `
     listPlans(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        nombre
-        precio
+        name
+        price
         createdAt
         updatedAt
+        __typename
       }
       nextToken
+      __typename
     }
   }
 `;
-export const dietasByClienteID = /* GraphQL */ `
-  query DietasByClienteID(
-    $clienteID: ID!
-    $sortDirection: ModelSortDirection
-    $filter: ModelDietasFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    dietasByClienteID(
-      clienteID: $clienteID
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        clienteID
-        cliente
-        fechaEntrega
-        fechaConsulta
-        tiempoRealizacion
-        calorias
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const consultasByClienteID = /* GraphQL */ `
-  query ConsultasByClienteID(
-    $clienteID: ID!
-    $sortDirection: ModelSortDirection
-    $filter: ModelConsultasFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    consultasByClienteID(
-      clienteID: $clienteID
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        cliente
-        seguimiento
-        fecha
-        lugar
-        aceptada
-        clienteID
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const getCliente = /* GraphQL */ `
-  query GetCliente($id: ID!) {
-    getCliente(id: $id) {
+export const getClient = /* GraphQL */ `
+  query GetClient($id: ID!) {
+    getClient(id: $id) {
       id
-      nombre
-      lugar
-      ultimaConsulta
-      profesional
+      firstName
+      lastName
+      lastConsult
+      professional
       Plan {
         id
-        nombre
-        precio
+        name
+        price
         createdAt
         updatedAt
+        __typename
       }
       email
       phoneNumber
-      NutriAsignado {
+      assignedProfessional {
         id
-        nombre
-        apellido
+        firstName
+        lastName
+        specialty
         createdAt
         updatedAt
+        __typename
       }
-      Dietas {
-        items {
-          id
-          clienteID
-          cliente
-          fechaEntrega
-          fechaConsulta
-          tiempoRealizacion
-          calorias
-          createdAt
-          updatedAt
-        }
+      Diets {
         nextToken
+        __typename
       }
-      Consultas {
-        items {
-          id
-          cliente
-          seguimiento
-          fecha
-          lugar
-          aceptada
-          clienteID
-          createdAt
-          updatedAt
-        }
+      Consults {
         nextToken
+        __typename
       }
-      peso
+      weight
+      place
       createdAt
       updatedAt
-      clientePlanId
-      clienteNutriAsignadoId
+      clientPlanId
+      clientAssignedProfessionalId
+      __typename
     }
   }
 `;
-export const listClientes = /* GraphQL */ `
-  query ListClientes(
-    $filter: ModelClienteFilterInput
+export const listClients = /* GraphQL */ `
+  query ListClients(
+    $filter: ModelClientFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listClientes(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listClients(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        nombre
-        lugar
-        ultimaConsulta
-        profesional
-        Plan {
-          id
-          nombre
-          precio
-          createdAt
-          updatedAt
-        }
+        firstName
+        lastName
+        lastConsult
+        professional
         email
         phoneNumber
-        NutriAsignado {
-          id
-          nombre
-          apellido
-          createdAt
-          updatedAt
-        }
-        Dietas {
-          nextToken
-        }
-        Consultas {
-          nextToken
-        }
-        peso
+        weight
+        place
         createdAt
         updatedAt
-        clientePlanId
-        clienteNutriAsignadoId
+        clientPlanId
+        clientAssignedProfessionalId
+        __typename
       }
       nextToken
+      __typename
     }
   }
 `;

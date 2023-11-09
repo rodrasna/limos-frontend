@@ -1,28 +1,28 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-limos-dev-184124-authRole",
-      "UnauthRoleArn": "arn:aws:iam::493734667802:role/amplify-limos-dev-184124-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::493734667802:role/amplify-limos-dev-184124-authRole",
+      "AuthRoleName": "amplify-limosfrontend-dev-132900-authRole",
+      "UnauthRoleArn": "arn:aws:iam::493734667802:role/amplify-limosfrontend-dev-132900-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::493734667802:role/amplify-limosfrontend-dev-132900-authRole",
       "Region": "eu-west-3",
-      "DeploymentBucketName": "amplify-limos-dev-184124-deployment",
-      "UnauthRoleName": "amplify-limos-dev-184124-unauthRole",
-      "StackName": "amplify-limos-dev-184124",
-      "StackId": "arn:aws:cloudformation:eu-west-3:493734667802:stack/amplify-limos-dev-184124/cc2d5ae0-94fb-11ed-9896-0a49bea5789a",
-      "AmplifyAppId": "d3fclahi6rhxbt"
+      "DeploymentBucketName": "amplify-limosfrontend-dev-132900-deployment",
+      "UnauthRoleName": "amplify-limosfrontend-dev-132900-unauthRole",
+      "StackName": "amplify-limosfrontend-dev-132900",
+      "StackId": "arn:aws:cloudformation:eu-west-3:493734667802:stack/amplify-limosfrontend-dev-132900/09f69480-6b4e-11ee-9c90-0adbfa3240bc",
+      "AmplifyAppId": "d2x80qn6lwkuhl"
     },
     "categories": {
-      "api": {
-        "limosAPI": {}
-      },
-      "auth": {
-        "limos6a6cfb3c": {}
-      },
       "hosting": {
         "amplifyhosting": {
           "appId": "d3fclahi6rhxbt",
           "type": "manual"
         }
+      },
+      "auth": {
+        "limos6a6cfb3c": {}
+      },
+      "api": {
+        "limosAPI": {}
       }
     }
   }

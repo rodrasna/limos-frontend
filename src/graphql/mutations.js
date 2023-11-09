@@ -1,153 +1,213 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createProfesional = /* GraphQL */ `
-  mutation CreateProfesional(
-    $input: CreateProfesionalInput!
-    $condition: ModelProfesionalConditionInput
+export const createProfessional = /* GraphQL */ `
+  mutation CreateProfessional(
+    $input: CreateProfessionalInput!
+    $condition: ModelProfessionalConditionInput
   ) {
-    createProfesional(input: $input, condition: $condition) {
+    createProfessional(input: $input, condition: $condition) {
       id
-      nombre
-      apellido
+      firstName
+      lastName
+      specialty
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
-export const updateProfesional = /* GraphQL */ `
-  mutation UpdateProfesional(
-    $input: UpdateProfesionalInput!
-    $condition: ModelProfesionalConditionInput
+export const updateProfessional = /* GraphQL */ `
+  mutation UpdateProfessional(
+    $input: UpdateProfessionalInput!
+    $condition: ModelProfessionalConditionInput
   ) {
-    updateProfesional(input: $input, condition: $condition) {
+    updateProfessional(input: $input, condition: $condition) {
       id
-      nombre
-      apellido
+      firstName
+      lastName
+      specialty
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
-export const deleteProfesional = /* GraphQL */ `
-  mutation DeleteProfesional(
-    $input: DeleteProfesionalInput!
-    $condition: ModelProfesionalConditionInput
+export const deleteProfessional = /* GraphQL */ `
+  mutation DeleteProfessional(
+    $input: DeleteProfessionalInput!
+    $condition: ModelProfessionalConditionInput
   ) {
-    deleteProfesional(input: $input, condition: $condition) {
+    deleteProfessional(input: $input, condition: $condition) {
       id
-      nombre
-      apellido
+      firstName
+      lastName
+      specialty
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
-export const createDietas = /* GraphQL */ `
-  mutation CreateDietas(
-    $input: CreateDietasInput!
-    $condition: ModelDietasConditionInput
+export const createDiet = /* GraphQL */ `
+  mutation CreateDiet(
+    $input: CreateDietInput!
+    $condition: ModelDietConditionInput
   ) {
-    createDietas(input: $input, condition: $condition) {
+    createDiet(input: $input, condition: $condition) {
       id
-      clienteID
-      cliente
-      fechaEntrega
-      fechaConsulta
-      tiempoRealizacion
-      calorias
+      clientID
+      client
+      dateDelivery
+      dateConsult
+      timeRealization
+      calories
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
-export const updateDietas = /* GraphQL */ `
-  mutation UpdateDietas(
-    $input: UpdateDietasInput!
-    $condition: ModelDietasConditionInput
+export const updateDiet = /* GraphQL */ `
+  mutation UpdateDiet(
+    $input: UpdateDietInput!
+    $condition: ModelDietConditionInput
   ) {
-    updateDietas(input: $input, condition: $condition) {
+    updateDiet(input: $input, condition: $condition) {
       id
-      clienteID
-      cliente
-      fechaEntrega
-      fechaConsulta
-      tiempoRealizacion
-      calorias
+      clientID
+      client
+      dateDelivery
+      dateConsult
+      timeRealization
+      calories
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
-export const deleteDietas = /* GraphQL */ `
-  mutation DeleteDietas(
-    $input: DeleteDietasInput!
-    $condition: ModelDietasConditionInput
+export const deleteDiet = /* GraphQL */ `
+  mutation DeleteDiet(
+    $input: DeleteDietInput!
+    $condition: ModelDietConditionInput
   ) {
-    deleteDietas(input: $input, condition: $condition) {
+    deleteDiet(input: $input, condition: $condition) {
       id
-      clienteID
-      cliente
-      fechaEntrega
-      fechaConsulta
-      tiempoRealizacion
-      calorias
+      clientID
+      client
+      dateDelivery
+      dateConsult
+      timeRealization
+      calories
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
-export const createConsultas = /* GraphQL */ `
-  mutation CreateConsultas(
-    $input: CreateConsultasInput!
-    $condition: ModelConsultasConditionInput
+export const createConsult = /* GraphQL */ `
+  mutation CreateConsult(
+    $input: CreateConsultInput!
+    $condition: ModelConsultConditionInput
   ) {
-    createConsultas(input: $input, condition: $condition) {
+    createConsult(input: $input, condition: $condition) {
       id
-      cliente
-      seguimiento
-      fecha
-      lugar
-      aceptada
-      clienteID
+      client
+      Alternativas
+      date
+      place
+      accept
+      clientID
+      Client {
+        id
+        firstName
+        lastName
+        lastConsult
+        professional
+        email
+        phoneNumber
+        weight
+        place
+        createdAt
+        updatedAt
+        clientPlanId
+        clientAssignedProfessionalId
+        __typename
+      }
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
-export const updateConsultas = /* GraphQL */ `
-  mutation UpdateConsultas(
-    $input: UpdateConsultasInput!
-    $condition: ModelConsultasConditionInput
+export const updateConsult = /* GraphQL */ `
+  mutation UpdateConsult(
+    $input: UpdateConsultInput!
+    $condition: ModelConsultConditionInput
   ) {
-    updateConsultas(input: $input, condition: $condition) {
+    updateConsult(input: $input, condition: $condition) {
       id
-      cliente
-      seguimiento
-      fecha
-      lugar
-      aceptada
-      clienteID
+      client
+      Alternativas
+      date
+      place
+      accept
+      clientID
+      Client {
+        id
+        firstName
+        lastName
+        lastConsult
+        professional
+        email
+        phoneNumber
+        weight
+        place
+        createdAt
+        updatedAt
+        clientPlanId
+        clientAssignedProfessionalId
+        __typename
+      }
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
-export const deleteConsultas = /* GraphQL */ `
-  mutation DeleteConsultas(
-    $input: DeleteConsultasInput!
-    $condition: ModelConsultasConditionInput
+export const deleteConsult = /* GraphQL */ `
+  mutation DeleteConsult(
+    $input: DeleteConsultInput!
+    $condition: ModelConsultConditionInput
   ) {
-    deleteConsultas(input: $input, condition: $condition) {
+    deleteConsult(input: $input, condition: $condition) {
       id
-      cliente
-      seguimiento
-      fecha
-      lugar
-      aceptada
-      clienteID
+      client
+      Alternativas
+      date
+      place
+      accept
+      clientID
+      Client {
+        id
+        firstName
+        lastName
+        lastConsult
+        professional
+        email
+        phoneNumber
+        weight
+        place
+        createdAt
+        updatedAt
+        clientPlanId
+        clientAssignedProfessionalId
+        __typename
+      }
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
@@ -158,10 +218,11 @@ export const createPlan = /* GraphQL */ `
   ) {
     createPlan(input: $input, condition: $condition) {
       id
-      nombre
-      precio
+      name
+      price
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
@@ -172,10 +233,11 @@ export const updatePlan = /* GraphQL */ `
   ) {
     updatePlan(input: $input, condition: $condition) {
       id
-      nombre
-      precio
+      name
+      price
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
@@ -186,199 +248,155 @@ export const deletePlan = /* GraphQL */ `
   ) {
     deletePlan(input: $input, condition: $condition) {
       id
-      nombre
-      precio
+      name
+      price
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
-export const createCliente = /* GraphQL */ `
-  mutation CreateCliente(
-    $input: CreateClienteInput!
-    $condition: ModelClienteConditionInput
+export const createClient = /* GraphQL */ `
+  mutation CreateClient(
+    $input: CreateClientInput!
+    $condition: ModelClientConditionInput
   ) {
-    createCliente(input: $input, condition: $condition) {
+    createClient(input: $input, condition: $condition) {
       id
-      nombre
-      lugar
-      ultimaConsulta
-      profesional
+      firstName
+      lastName
+      lastConsult
+      professional
       Plan {
         id
-        nombre
-        precio
+        name
+        price
         createdAt
         updatedAt
+        __typename
       }
       email
       phoneNumber
-      NutriAsignado {
+      assignedProfessional {
         id
-        nombre
-        apellido
+        firstName
+        lastName
+        specialty
         createdAt
         updatedAt
+        __typename
       }
-      Dietas {
-        items {
-          id
-          clienteID
-          cliente
-          fechaEntrega
-          fechaConsulta
-          tiempoRealizacion
-          calorias
-          createdAt
-          updatedAt
-        }
+      Diets {
         nextToken
+        __typename
       }
-      Consultas {
-        items {
-          id
-          cliente
-          seguimiento
-          fecha
-          lugar
-          aceptada
-          clienteID
-          createdAt
-          updatedAt
-        }
+      Consults {
         nextToken
+        __typename
       }
-      peso
+      weight
+      place
       createdAt
       updatedAt
-      clientePlanId
-      clienteNutriAsignadoId
+      clientPlanId
+      clientAssignedProfessionalId
+      __typename
     }
   }
 `;
-export const updateCliente = /* GraphQL */ `
-  mutation UpdateCliente(
-    $input: UpdateClienteInput!
-    $condition: ModelClienteConditionInput
+export const updateClient = /* GraphQL */ `
+  mutation UpdateClient(
+    $input: UpdateClientInput!
+    $condition: ModelClientConditionInput
   ) {
-    updateCliente(input: $input, condition: $condition) {
+    updateClient(input: $input, condition: $condition) {
       id
-      nombre
-      lugar
-      ultimaConsulta
-      profesional
+      firstName
+      lastName
+      lastConsult
+      professional
       Plan {
         id
-        nombre
-        precio
+        name
+        price
         createdAt
         updatedAt
+        __typename
       }
       email
       phoneNumber
-      NutriAsignado {
+      assignedProfessional {
         id
-        nombre
-        apellido
+        firstName
+        lastName
+        specialty
         createdAt
         updatedAt
+        __typename
       }
-      Dietas {
-        items {
-          id
-          clienteID
-          cliente
-          fechaEntrega
-          fechaConsulta
-          tiempoRealizacion
-          calorias
-          createdAt
-          updatedAt
-        }
+      Diets {
         nextToken
+        __typename
       }
-      Consultas {
-        items {
-          id
-          cliente
-          seguimiento
-          fecha
-          lugar
-          aceptada
-          clienteID
-          createdAt
-          updatedAt
-        }
+      Consults {
         nextToken
+        __typename
       }
-      peso
+      weight
+      place
       createdAt
       updatedAt
-      clientePlanId
-      clienteNutriAsignadoId
+      clientPlanId
+      clientAssignedProfessionalId
+      __typename
     }
   }
 `;
-export const deleteCliente = /* GraphQL */ `
-  mutation DeleteCliente(
-    $input: DeleteClienteInput!
-    $condition: ModelClienteConditionInput
+export const deleteClient = /* GraphQL */ `
+  mutation DeleteClient(
+    $input: DeleteClientInput!
+    $condition: ModelClientConditionInput
   ) {
-    deleteCliente(input: $input, condition: $condition) {
+    deleteClient(input: $input, condition: $condition) {
       id
-      nombre
-      lugar
-      ultimaConsulta
-      profesional
+      firstName
+      lastName
+      lastConsult
+      professional
       Plan {
         id
-        nombre
-        precio
+        name
+        price
         createdAt
         updatedAt
+        __typename
       }
       email
       phoneNumber
-      NutriAsignado {
+      assignedProfessional {
         id
-        nombre
-        apellido
+        firstName
+        lastName
+        specialty
         createdAt
         updatedAt
+        __typename
       }
-      Dietas {
-        items {
-          id
-          clienteID
-          cliente
-          fechaEntrega
-          fechaConsulta
-          tiempoRealizacion
-          calorias
-          createdAt
-          updatedAt
-        }
+      Diets {
         nextToken
+        __typename
       }
-      Consultas {
-        items {
-          id
-          cliente
-          seguimiento
-          fecha
-          lugar
-          aceptada
-          clienteID
-          createdAt
-          updatedAt
-        }
+      Consults {
         nextToken
+        __typename
       }
-      peso
+      weight
+      place
       createdAt
       updatedAt
-      clientePlanId
-      clienteNutriAsignadoId
+      clientPlanId
+      clientAssignedProfessionalId
+      __typename
     }
   }
 `;

@@ -12,7 +12,16 @@ import { Button } from "@mui/material";
 Modal.setAppElement("#root");
 
 const Client = (props) => {
-  const { name, profesional, place, plan, lastConsultDate, image } = props;
+  const { firstName,
+    lastName,
+    lastConsult,
+    professional,
+    email,
+    phoneNumber,
+    weight,
+    place,
+    plan,
+    clientAssigne, image } = props;
   console.log(props);
   const [showProfile, setShowProfile] = useState(false);
 
@@ -29,16 +38,17 @@ const Client = (props) => {
       <div className="left-side">
         <div className="client-data-container">
           <img className="client-image-rectangle" alt="client" src={image} />
-          <span className="client-name">{name}</span>
-            <Button className="view-profile-button" variant="contained" onClick={handleProfileClick}>
-              Ver perfil
-            </Button>
+          <span className="client-firstName">{firstName}</span>
+          <span className="client-lastName">{lastName}</span>
+          <Button className="view-profile-button" variant="contained" onClick={handleProfileClick}>
+            Ver perfil
+          </Button>
         </div>
       </div>
       <div className="right-side">
         <div className="item">
           <WorkIcon className="icon" />
-          <span className="label">{profesional}</span>
+          <span className="label">{professional}</span>
         </div>
         <div className="item">
           <RoomIcon className="icon" />
@@ -50,7 +60,7 @@ const Client = (props) => {
         </div>
         <div className="item">
           <EventIcon className="icon" />
-          <span className="label">{lastConsultDate}</span>
+          <span className="label">{lastConsult}</span>
         </div>
       </div>
 
@@ -62,11 +72,13 @@ const Client = (props) => {
         overlayClassName="client-profile-overlay"
       >
         <ClientProfile
-          name={name}
-          profesional={profesional}
+          firstName={firstName}
+          lastName={lastName}
+          professional={professional}
           place={place}
           plan={plan}
-          lastConsultDate={lastConsultDate}
+          lastConsultDate={lastConsult}
+          hora="{hora}"
           onClose={closeProfileModal}
         />
       </Modal>
