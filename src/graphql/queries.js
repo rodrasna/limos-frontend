@@ -1,7 +1,7 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getProfessional = /* GraphQL */ `
+export const getProfessional =  `
   query GetProfessional($id: ID!) {
     getProfessional(id: $id) {
       id
@@ -13,8 +13,8 @@ export const getProfessional = /* GraphQL */ `
       __typename
     }
   }
-`;
-export const listProfessionals = /* GraphQL */ `
+`
+export const listProfessionals =  `
   query ListProfessionals(
     $filter: ModelProfessionalFilterInput
     $limit: Int
@@ -34,8 +34,8 @@ export const listProfessionals = /* GraphQL */ `
       __typename
     }
   }
-`;
-export const getDiet = /* GraphQL */ `
+`
+export const getDiet =  `
   query GetDiet($id: ID!) {
     getDiet(id: $id) {
       id
@@ -50,8 +50,8 @@ export const getDiet = /* GraphQL */ `
       __typename
     }
   }
-`;
-export const listDiets = /* GraphQL */ `
+`
+export const listDiets =  `
   query ListDiets(
     $filter: ModelDietFilterInput
     $limit: Int
@@ -74,8 +74,8 @@ export const listDiets = /* GraphQL */ `
       __typename
     }
   }
-`;
-export const dietsByClientID = /* GraphQL */ `
+`
+export const dietsByClientID =  `
   query DietsByClientID(
     $clientID: ID!
     $sortDirection: ModelSortDirection
@@ -106,8 +106,8 @@ export const dietsByClientID = /* GraphQL */ `
       __typename
     }
   }
-`;
-export const getConsult = /* GraphQL */ `
+`
+export const getConsult =  `
   query GetConsult($id: ID!) {
     getConsult(id: $id) {
       id
@@ -138,32 +138,43 @@ export const getConsult = /* GraphQL */ `
       __typename
     }
   }
-`;
-export const listConsults = /* GraphQL */ `
-  query ListConsults(
-    $filter: ModelConsultFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listConsults(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
+`
+export const listConsults =`
+query ListConsults(
+  $filter: ModelConsultFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listConsults(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      client
+      Alternativas
+      date
+      place
+      accept
+      clientID
+      Client {
         id
-        client
-        Alternativas
-        date
+        firstName
+        lastName
+        lastConsult
+        professional
+        email
+        phoneNumber
+        weight
         place
-        accept
-        clientID
-        createdAt
-        updatedAt
-        __typename
       }
-      nextToken
+      createdAt
+      updatedAt
       __typename
     }
+    nextToken
+    __typename
   }
-`;
-export const consultsByClientID = /* GraphQL */ `
+}
+`
+export const consultsByClientID =  `
   query ConsultsByClientID(
     $clientID: ID!
     $sortDirection: ModelSortDirection
@@ -194,8 +205,8 @@ export const consultsByClientID = /* GraphQL */ `
       __typename
     }
   }
-`;
-export const getPlan = /* GraphQL */ `
+`
+export const getPlan =  `
   query GetPlan($id: ID!) {
     getPlan(id: $id) {
       id
@@ -206,8 +217,8 @@ export const getPlan = /* GraphQL */ `
       __typename
     }
   }
-`;
-export const listPlans = /* GraphQL */ `
+`
+export const listPlans =  `
   query ListPlans(
     $filter: ModelPlanFilterInput
     $limit: Int
@@ -226,8 +237,8 @@ export const listPlans = /* GraphQL */ `
       __typename
     }
   }
-`;
-export const getClient = /* GraphQL */ `
+`
+export const getClient =  `
   query GetClient($id: ID!) {
     getClient(id: $id) {
       id
@@ -271,8 +282,8 @@ export const getClient = /* GraphQL */ `
       __typename
     }
   }
-`;
-export const listClients = /* GraphQL */ `
+`
+export const listClients =  `
   query ListClients(
     $filter: ModelClientFilterInput
     $limit: Int
@@ -299,4 +310,4 @@ export const listClients = /* GraphQL */ `
       __typename
     }
   }
-`;
+`

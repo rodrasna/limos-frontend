@@ -17,7 +17,7 @@ const TeamMember = (props) => {
     <div className="user-rectangle">
       <div className="left-side">
         <div className="user-data-container">
-          <img className="user-image-rectangle" src={image} alt="user" />
+          <img className="user-image-rectangle" src={image} />
           <span className="user-firstName">{firstName}</span>
           <span className="user-lastName">{lastName}</span>
           <div className="specialty-container">

@@ -3,34 +3,26 @@ import Grid from '@mui/material/Grid';
 import { Button } from "@mui/material";
 import Consulta from "./Consulta";
 import '../HomeBase.css';
+import { useEffect, useState } from "react";
+import { API, graphqlOperation } from 'aws-amplify';
+import { listConsults } from '../../../graphql/queries';
 
 const ProximasConsultas = () => {
-  const consultas = [
-    {
-      cliente: "Lucía Martín Fontes",
-      fecha: "2023-06-15 10:00",
-      image: require("../../../assets/Lucia.jpg"),
-      confirmada: true
-    },
-    {
-      cliente: "Juan Pérez",
-      fecha: "2023-06-14 10:00",
-      image: require("../../../assets/Pedro.jpg"),
-      confirmada: true
-    },
-    {
-      cliente: "Mario Rodríguez",
-      fecha: "2023-06-16 10:00",
-      image: require("../../../assets/Richy.jpg"),
-      confirmada: false
-    },
-    {
-      cliente: "Ana García",
-      fecha: "2023-06-17 10:00",
-      image: require("../../../assets/Lucia.jpg"),
-      confirmada: true
-    }
-  ];
+  const [consultas, setConsultas] = useState([]);
+
+  useEffect(() => {
+    const fetchConsultas = async () => {
+      try {
+        const consultaData = await API.graphql(graphqlOperation(listConsults));
+        const listaDeConsultas = consultaData.data.listConsults.items;
+        setConsultas(listaDeConsultas);
+      } catch (error) {
+        console.error("Error al obtener las consultas", error);
+      }
+    };
+
+    fetchConsultas();
+  }, []);
 
   const consultasOrdenadas = consultas.sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
   const siguienteConsulta = consultasOrdenadas.shift();

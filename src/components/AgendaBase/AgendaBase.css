@@ -45,10 +45,16 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  padding: 5px;
 }
 
+
 .date-agenda {
+  font-size: 0.8em;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90%;
 }
 
 .peticion-consulta-image-client-rectangle {

@@ -19,8 +19,9 @@
     "react-big-calendar": "^1.6.9",
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",
+    "react-refresh": "^0.14.0",
     "react-router-dom": "^6.9.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
@@ -43,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "babel-eslint": "^10.1.0"
   }
 }

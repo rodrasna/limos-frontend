@@ -17,11 +17,7 @@ const ProximasPeticionesConsulta = () => {
       try {
         const consultaData = await API.graphql(graphqlOperation(listConsults));
         const listaDeConsultas = consultaData.data.listConsults.items;
-
-        // Ahora necesitas obtener el nombre del cliente para cada consulta.
-        // Si tu API ya incluye el nombre del cliente en la respuesta, simplemente puedes usarlo directamente.
-        // De lo contrario, aquí podrías hacer una solicitud adicional para obtener los datos del cliente.
-        // Por simplicidad, asumiré que ya tienes el nombre del cliente incluido.
+        console.log(listaDeConsultas);
 
         setPeticionesConsulta(listaDeConsultas);
       } catch (error) {
@@ -47,7 +43,6 @@ const ProximasPeticionesConsulta = () => {
     <Grid item xs={12} sm={6} md={3} key={peticion.id || index}>
       <PeticionConsulta
         // Suponiendo que cada 'peticion' tiene un objeto 'Client' con la información del cliente
-        imageSrc={''/* Deberías obtener la imagen del cliente de alguna parte, si es necesario */}
         clientName={peticion.Client ? `${peticion.Client.firstName} ${peticion.Client.lastName}` : 'Nombre no disponible'}
         fecha={peticion.date}
       // Pasar otros datos necesarios a tu componente PeticionConsulta

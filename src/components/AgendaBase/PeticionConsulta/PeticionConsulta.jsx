@@ -31,6 +31,13 @@ const PeticionConsulta = ({ imageSrc, clientName, fecha }) => {
   const rectangleClassNames = `peticion-consulta-rectangle ${accepted ? "accepted" : ""
     } ${rejected ? "rejected" : ""}`;
 
+  const formatDate = (fecha) => {
+    const dateObj = new Date(fecha);
+    const formattedDate = `${dateObj.getDate()}/${dateObj.getMonth() + 1}/${dateObj.getFullYear()}`;
+    const formattedTime = `${dateObj.getHours()}:${dateObj.getMinutes().toString().padStart(2, '0')}`;
+    return `${formattedDate} ${formattedTime}`;
+  };
+
   return (
     <div className={rectangleClassNames}>
       <div className="left-side-consulta">
@@ -38,10 +45,9 @@ const PeticionConsulta = ({ imageSrc, clientName, fecha }) => {
           <img
             className="peticion-consulta-image-client-rectangle"
             src={imageSrc}
-            alt="client"
           />
           <span className="client-name">{clientName}</span>
-          <span className="date-agenda">{fecha}</span>
+          <span className="date-agenda">{formatDate(fecha)}</span>
         </div>
       </div>
       <div className="right-side-consulta">

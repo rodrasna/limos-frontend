@@ -29,11 +29,9 @@ const SidebarToggleButton = ({ onClick, sidebarVisible }) => (
 
 const App = () => {
   const [expanded, setExpanded] = useState(true);
-  const [sidebarVisible, setSidebarVisible] = useState(true);
 
   const toggleSidebar = () => {
     setExpanded(!expanded);
-    setSidebarVisible(!sidebarVisible);
   };
 
   const rowSpacing = 0;
@@ -43,7 +41,7 @@ const App = () => {
   return (
     <div className={`dashboard ${expanded ? "expanded" : "collapsed"}`}>
       <Grid container rowSpacing={rowSpacing} columnSpacing={columnSpacing}>
-        <SidebarToggleButton onClick={toggleSidebar} sidebarVisible={sidebarVisible} />
+        <SidebarToggleButton onClick={toggleSidebar}/>
         <Banner />
         <Grid item xs={sidebarSize}>
           <LeftSideBar expanded={expanded} />

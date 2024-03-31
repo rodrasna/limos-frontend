@@ -24,20 +24,24 @@ a.active img{
 
 .left-sidebar-container {
   position: absolute;
-  top: 10px;
+  top: 3%;
   left: 3px;
   bottom: 0;
-  width: 60px;
-  background-color: #ffffff;
+  width: 10%;
   transition: width 0.3s;
-  margin-top: 64px;
+  margin-top: 3%;
   padding: 10px;
 }
 
 .left-sidebar-container.expanded {
   width: 150px;
-  padding: auto;
 }
+
+.left-sidebar-container.expanded .left-sidebar-link span {
+  display: inline;
+  opacity: 1;
+}
+
 .left-sidebar-container.collapsed {
   width: 15px;
   padding: auto;
@@ -66,6 +70,11 @@ a.active img{
   display: flex;
   padding: 10px 0;
   transition: width 0.3s;
+}
+
+.left-sidebar-link span {
+  display: none;
+  transition: opacity 0.3s;
 }
 
 .iconly-light-outline-h,
