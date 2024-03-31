@@ -6,6 +6,11 @@ import MainLayout from 'layout/MainLayout';
 
 // render - dashboard
 const DashboardDefault = Loadable(lazy(() => import('pages/dashboard')));
+const Home = Loadable(lazy(() => import('pages/home')));
+const Agenda = Loadable(lazy(() => import('pages/agenda')));
+const Team = Loadable(lazy(() => import('pages/team')));
+const Clients = Loadable(lazy(() => import('pages/clients')));
+const Library = Loadable(lazy(() => import('pages/library')));
 
 // render - sample page
 const SamplePage = Loadable(lazy(() => import('pages/extra-pages/SamplePage')));
@@ -23,21 +28,38 @@ const MainRoutes = {
   element: <MainLayout />,
   children: [
     {
-      path: '/',
-      element: <DashboardDefault />
-    },
-    {
       path: 'color',
       element: <Color />
     },
     {
-      path: 'dashboard',
-      children: [
+      path: 'home',
+      element: <Home />
+    },
+    {
+      path: 'agenda',
+      element: <Agenda />
+    },
+    {
+      path: 'team',
+      element: <Team />
+    },
+    {
+      path: 'clients',
+      element: <Clients />
+      /*children: [
         {
           path: 'default',
-          element: <DashboardDefault />
+          element: <Clients />
         }
-      ]
+      ]*/
+    },
+    {
+      path: 'library',
+      element: <Library />
+    },
+    {
+      path: 'dashboard',
+      element: <DashboardDefault />
     },
     {
       path: 'sample-page',
